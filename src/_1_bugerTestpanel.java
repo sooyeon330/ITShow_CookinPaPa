@@ -61,7 +61,14 @@ public class _1_bugerTestpanel extends JPanel{
 		buger[5].setBounds(100, 345, buger7img.getIconWidth(), buger7img.getIconHeight());
 		
 		
-
+		JLabel success = new JLabel(successimg);
+		JLabel fail = new JLabel(failimg);
+		success.setBounds(100, 100, successimg.getIconWidth(), successimg.getIconHeight());
+		fail.setBounds(100, 100, successimg.getIconWidth(), successimg.getIconHeight());
+		add(success);add(fail);
+		success.setVisible(false);
+		fail.setVisible(false);
+		
 		
 		for(int i=0; i<4; i++) {
 			keyimg[i] = ImageResize(w, h, keyimg[i]);
@@ -83,7 +90,7 @@ public class _1_bugerTestpanel extends JPanel{
 						  
 						@Override
 						public void keyPressed(KeyEvent e) {
-
+							success.setVisible(false);	fail.setVisible(false);
 								if(e.getKeyChar()=='w'||e.getKeyChar()=='a'||e.getKeyChar()=='s'||e.getKeyChar()=='d') {
 		
 				//					System.out.println("keypress1 "+e.getKeyCode()+" "+keyarray1[1][k1]);
@@ -94,18 +101,23 @@ public class _1_bugerTestpanel extends JPanel{
 											add(buger[b++]);
 											if(b > 5) {
 												b=1; 
+												success.setVisible(true);
 												removeBuger(buger);
+
 											}
 											k1=0; //초기화
 										
-											removeKey(keylb_1p, keyarray1); //키 지우고
+											removeKey(keylb_1p); //키 지우고
 											paintKey(keylb_1p, keyarray1, rand,x2); //새로출력
+										
+//											success.setVisible(false);
 										}
 										
 									}else { //틀리는 순간
+										fail.setVisible(true);
 										removeBuger(buger);
 										k1=0;b=1; //초기화
-										removeKey(keylb_1p, keyarray1); //키 지우고
+										removeKey(keylb_1p); //키 지우고
 										paintKey(keylb_1p, keyarray1, rand,x2); //새로출력
 									}
 								
@@ -142,6 +154,7 @@ public class _1_bugerTestpanel extends JPanel{
 		
 	}
 	synchronized protected void paintKey(JLabel[] keylb,int[][] array,int rand,int x) { //새로운 키 배열 출력
+	
 		int spacing=0; //키 간격조정위한 변수
 		for(int i=0; i<4; i++) { //랜덤으로 방향키 출력	
 			rand = (int) (Math.random()*4); //방향키값을 랜덤으로 가져와서
@@ -156,14 +169,16 @@ public class _1_bugerTestpanel extends JPanel{
 //			System.out.println("add"+rand);
 			
 		}
+		
 	}
-	synchronized protected void removeKey(JLabel[] keylb,int[][] array) { //화면의 키들을 다 지움
+	synchronized protected void removeKey(JLabel[] keylb) { //화면의 키들을 다 지움
 		
 		this.remove( keylb[0] );
 		this.remove( keylb[1] );
 		this.remove( keylb[2] );
 		this.remove( keylb[3] );
 //		this.repaint(); 
+
 		
 	}
 	protected void removeBuger(JLabel[] buger) {
