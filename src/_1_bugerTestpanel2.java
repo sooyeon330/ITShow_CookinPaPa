@@ -11,7 +11,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class _1_bugerTestpanel2 extends JPanel {
-	ImageIcon bgimage = new ImageIcon("pic/cuttingboard33.png");
+	ImageIcon bgimage = new ImageIcon("pic/cuttingboard4.png");
 	ImageIcon keyimg[] = { new ImageIcon("pic/key1.png"), // left
 			new ImageIcon("pic/key2.png"), // up
 			new ImageIcon("pic/key3.png"), // right
@@ -59,11 +59,11 @@ public class _1_bugerTestpanel2 extends JPanel {
 					@Override
 					public void keyPressed(KeyEvent e) {
 						if(e.getKeyCode() == 37||e.getKeyCode() == 38||e.getKeyCode() == 39||e.getKeyCode() == 40) {
-						System.out.println("keypress2");
+	//					System.out.println("keypress2");
 						keylb_2p[k2].setIcon(presskeyimg[keyarray2[0][k2]]); // 라벨의 맞는 순서의 이미지를 가져옴
 
 						if (e.getKeyCode() == keyarray2[1][k2++]) { // 누른키와 눌러야하는 키가 같으면
-							System.out.println("맞음");
+//							System.out.println("맞음");
 							if (k2 > 3) { // 인덱스 넘어가면
 								k2 = 0; // 초기화
 								removeKey(keylb_2p, keyarray2); // 키 지우고
@@ -71,7 +71,7 @@ public class _1_bugerTestpanel2 extends JPanel {
 							}
 
 						} else { // 틀리는 순간
-							System.out.println("틀림");
+		//					System.out.println("틀림");
 							k2 = 0; // 초기화
 							removeKey(keylb_2p, keyarray2); // 키 지우고
 							paintKey(keylb_2p, keyarray2, rand, x2); // 새로출력
