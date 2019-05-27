@@ -13,7 +13,7 @@ class twomenu extends JPanel{
 	ImageIcon carrotimg = new ImageIcon("pic/menu_carrot.png");
 	ImageIcon radishimg = new ImageIcon("pic/menu_radish.png");
 	ImageIcon bugerimg = new ImageIcon("pic/menu_hambuger.png");
-	
+
 
 
 	twomenu(JFrame frame){
