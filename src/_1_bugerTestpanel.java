@@ -136,10 +136,7 @@ public class _1_bugerTestpanel extends JPanel{
 					};//keylisten
 					
 					frame.addKeyListener(klisten);
-				
-				
-				
-						
+		
 			}//run
 		});//thread
 		
