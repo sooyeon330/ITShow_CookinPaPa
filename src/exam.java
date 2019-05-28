@@ -59,11 +59,25 @@ class exam extends JPanel{
 				else if(btn_count == 5) {
 					frame.add(new stage_chicken5(frame));
 				}
-				else {
+				else if(btn_count == 6){
 					frame.add(new stage_chicken6(frame));
 				}
+				else if(btn_count == 7) {
+					frame.add(new stage_kimbab1(frame));
+				}
+				else if(btn_count == 8) {
+					frame.add(new stage_kimbab2(frame));
+				}
+				else if(btn_count == 9) {
+					frame.add(new stage_kimbab3(frame));
+				}
+				else if(btn_count == 10) {
+					frame.add(new stage_kimbab4(frame));
+				}
+				else {
+					frame.add(new stage_kimbab5(frame));
+				}
 				btn_count++;
-//				System.out.println("ī��Ʈ : " + btn_count);
 				frame.remove(panel);
 				frame.repaint();
 				frame.revalidate();
@@ -94,7 +108,21 @@ class exam extends JPanel{
 		case 6: 
 			bgimage = bgimage6;
 			break;
-		default : break;
+		case 7 : 
+			bgimage = bgimage6;
+			break;
+		case 8 : 
+			bgimage = bgimage6;
+			break;
+		case 9 : 
+			bgimage = bgimage6;
+			break;
+		case 10 : 
+			bgimage = bgimage6;
+			break;
+		case 11 : 
+			bgimage = bgimage6;
+			break;
 		}
 		
 		g.drawImage(bgimage.getImage(),0,0,null);

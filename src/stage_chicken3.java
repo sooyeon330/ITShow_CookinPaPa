@@ -76,10 +76,9 @@ class stage_chicken3 extends JPanel{
 					menu.stage3_score += 3;
 					count++;
 					ingre_sauce.setIcon(sauce[1]);	
-					setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
 					ingre_water.setVisible(false);
-				}else
-					setCursor(new Cursor(Cursor.DEFAULT_CURSOR)); 
+				}
+				setCursor(new Cursor(Cursor.DEFAULT_CURSOR)); 
 			}
 		});
 		
@@ -98,10 +97,9 @@ class stage_chicken3 extends JPanel{
 					menu.stage3_score += 3;
 					count++;
 					ingre_sauce.setIcon(sauce[2]);	
-					setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
 					ingre_soysauce.setVisible(false);
-				}else
-					setCursor(new Cursor(Cursor.DEFAULT_CURSOR)); 
+				}
+				setCursor(new Cursor(Cursor.DEFAULT_CURSOR)); 
 			}
 		});
 		
@@ -120,10 +118,9 @@ class stage_chicken3 extends JPanel{
 						menu.stage3_score += 3;	
 						count++;
 						ingre_sauce.setIcon(sauce[3]);	
-						setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
 						ingre_ketchup.setVisible(false);
-				}else
-					setCursor(new Cursor(Cursor.DEFAULT_CURSOR)); 
+				}
+				setCursor(new Cursor(Cursor.DEFAULT_CURSOR)); 
 			}
 		});
 		
@@ -141,11 +138,10 @@ class stage_chicken3 extends JPanel{
 				if(e.getX() >= -80 && e.getX() <= 521 && e.getY() >= 190 && e.getY() <= 656 && count==3 && pause.work) {
 					menu.stage3_score += 3;
 					ingre_sauce.setIcon(sauce[4]);	
-					setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
 					ingre_kochujang.setVisible(false);
 					clear = true;
-				}else
-					setCursor(new Cursor(Cursor.DEFAULT_CURSOR)); 
+				}
+				setCursor(new Cursor(Cursor.DEFAULT_CURSOR)); 
 			}
 		});
 		

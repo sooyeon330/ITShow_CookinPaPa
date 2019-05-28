@@ -15,13 +15,11 @@ public class two_carrot extends JPanel{
 	int i = 0, j = 0;
 	static int count1 = 0;
 	static int count2 = 0;
+	KeyListener kl;
 	
 	two_carrot(JFrame frame){
 		setLayout(null);
-		
-		Time_Limit t= new Time_Limit(16, this, frame, 1);
-		t.start();
-		
+
 		JLabel carrot1 = new JLabel(carrot[i]);
 		JLabel carrot2 = new JLabel(carrot[j]);
 		
@@ -35,8 +33,7 @@ public class two_carrot extends JPanel{
 		
 		add(carrot1);add(carrot2);add(one_count);add(two_count);
 		
-		frame.requestFocusInWindow();
-		frame.addKeyListener(new KeyListener() {
+		kl = new KeyListener() {
 			
 			@Override
 			public void keyTyped(KeyEvent e) {
@@ -69,7 +66,14 @@ public class two_carrot extends JPanel{
 				// TODO Auto-generated method stub
 				
 			}
-		});
+		};
+		
+		
+		Time_Limit t= new Time_Limit(16, this, frame, 1, kl);
+		t.start();
+		
+		frame.requestFocusInWindow();
+		frame.addKeyListener(kl);
 	}
 	
 	private int getIconWidth() {
