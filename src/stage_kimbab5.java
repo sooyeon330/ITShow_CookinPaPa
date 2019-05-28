@@ -27,7 +27,7 @@ public class stage_kimbab5 extends JPanel{
 		t.start();
 		
 		JLabel kimbab = new JLabel(kimbabImg[0]);
-		setBounds(0,0,kimbabImg[0].getIconWidth(),kimbabImg[0].getIconHeight());
+		setBounds(100,-100,kimbabImg[0].getIconWidth(),kimbabImg[0].getIconHeight());
 		add(kimbab);
 		
 		KeyListener kl = new KeyListener() {
@@ -45,11 +45,11 @@ public class stage_kimbab5 extends JPanel{
 				if(e.getKeyCode() == KeyEvent.VK_SPACE) {
 					if(Timing.x >=460 && Timing.x <=500) {
 						kimbab.setIcon(kimbabImg[1]);
+						count++;
 					}
 					else {
 						kimbab.setIcon(kimbabImg[2]);
 					}
-					count++;
 					if(count == 5) {
 						frame.removeKeyListener(this);
 					}
