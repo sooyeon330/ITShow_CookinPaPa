@@ -126,7 +126,7 @@ public class _1_bugerTestpanel2 extends JPanel {
 						keylb_2p[k2].setIcon(keyimg[keyarray2[0][k2]]);
 						frame.repaint();
 					}
-
+					
 				};
 				frame.addKeyListener(klisten);
 			}

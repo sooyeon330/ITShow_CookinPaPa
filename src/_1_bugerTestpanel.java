@@ -4,6 +4,7 @@ import java.awt.RenderingHints.Key;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -22,13 +23,13 @@ public class _1_bugerTestpanel extends JPanel{
 							new ImageIcon("pic/presskey2.png"), // up
 							new ImageIcon("pic/presskey3.png"), //right
 							new ImageIcon("pic/presskey4.png")}; //down
-	
+//	
 	ImageIcon buger1img = new ImageIcon("pic/hamburger1.png");
-	ImageIcon buger2img = new ImageIcon("pic/hamburger2.png");
-	ImageIcon buger3img = new ImageIcon("pic/hamburger3.png");
-	ImageIcon buger4img = new ImageIcon("pic/hamburger4.png");
-	ImageIcon buger5img = new ImageIcon("pic/hamburger5.png");
-	ImageIcon buger7img = new ImageIcon("pic/hamburger7.png");
+//	ImageIcon buger2img = new ImageIcon("pic/hamburger2.png");
+//	ImageIcon buger3img = new ImageIcon("pic/hamburger3.png");
+//	ImageIcon buger4img = new ImageIcon("pic/hamburger4.png");
+//	ImageIcon buger5img = new ImageIcon("pic/hamburger5.png");
+//	ImageIcon buger7img = new ImageIcon("pic/hamburger7.png");
 	
 	ImageIcon successimg = new ImageIcon("pic/success.png");
 	ImageIcon failimg = new ImageIcon("pic/fail.png");
@@ -44,23 +45,26 @@ public class _1_bugerTestpanel extends JPanel{
 	public static final int right = 2; //방향키 키코드
 	public static final int down = 3; //방향키 키코드
 	
-	int k1=0, b=1;//keyarray에 쓸 인덱스 , buger에 쓸 인덱스
+	int k1=0,b=0;//keyarray에 쓸 인덱스 , buger에 쓸 인덱스
+	JPanel panel;
+	static ArrayList<JLabel> delbuguer = new ArrayList<>();
+	static int delidx=0;
+	
 	_1_bugerTestpanel(JFrame frame) {
 		setLayout(null);
+		panel = this;
+		
 		int rand = (int) (Math.random()*4);
 		int keyarray1[][] = new int[4][4];//0 : rand, 1 : keyCode()
 		
-		JLabel buger[] = {new JLabel(buger1img), new JLabel(buger4img),new JLabel(buger5img),
-				new JLabel(buger2img), new JLabel(buger3img), new JLabel(buger7img) };
+		//버거패티
+		JLabel basebuger = new JLabel(buger1img);
+		String bugername[] = {"buger2img","buger3img","buger4img","buger5img","buger7img","buger7img"};
+		basebuger.setBounds(100, 530, buger1img.getIconWidth(), buger1img.getIconHeight());
+		
+		
 
-		buger[0].setBounds(100, 530, buger1img.getIconWidth(), buger1img.getIconHeight());
-		buger[1].setBounds(100, 510, buger4img.getIconWidth(), buger4img.getIconHeight());
-		buger[2].setBounds(110, 500, buger5img.getIconWidth(), buger5img.getIconHeight());
-		buger[3].setBounds(110, 480, buger2img.getIconWidth(), buger2img.getIconHeight());
-		buger[4].setBounds(110, 465, buger3img.getIconWidth(), buger3img.getIconHeight());
-		buger[5].setBounds(100, 345, buger7img.getIconWidth(), buger7img.getIconHeight());
-		
-		
+		//성공 실패
 		JLabel success = new JLabel(successimg);
 		JLabel fail = new JLabel(failimg);
 		success.setBounds(100, 100, successimg.getIconWidth(), successimg.getIconHeight());
@@ -78,11 +82,11 @@ public class _1_bugerTestpanel extends JPanel{
 		JLabel keylb_1p[]= {null,null,null,null}; //up
 		
 		paintKey(keylb_1p, keyarray1, rand,x2);
-		add(buger[0]);
+		add(basebuger);
 		frame.requestFocus();
 		
 		Thread p1 = new Thread(new Runnable() {
-			
+			_1_bugerThread bth;
 			@Override
 			public void run() {
 				
@@ -93,30 +97,28 @@ public class _1_bugerTestpanel extends JPanel{
 							success.setVisible(false);	fail.setVisible(false);
 								if(e.getKeyChar()=='w'||e.getKeyChar()=='a'||e.getKeyChar()=='s'||e.getKeyChar()=='d') {
 		
-				//					System.out.println("keypress1 "+e.getKeyCode()+" "+keyarray1[1][k1]);
 									keylb_1p[k1].setIcon(presskeyimg[keyarray1[0][k1]]); //라벨의 맞는 순서의 이미지를 가져옴
 									
 									if(e.getKeyCode() == keyarray1[1][k1++]) { //누른키와 눌러야하는 키가 같으면
 										if(k1 > 3) { //인덱스 넘어가면
-											add(buger[b++]);
-											if(b > 5) {
-												b=1; 
+											System.out.println("b : "+b);
+											bth = new _1_bugerThread(bugername[b++],panel);
+											if(b > 5) {	
 												success.setVisible(true);
-												removeBuger(buger);
-
+												bth = new _1_bugerThread(bugername[4],panel);
+												b=0;
+												removeBuger(delbuguer);	
 											}
 											k1=0; //초기화
-										
+											
 											removeKey(keylb_1p); //키 지우고
-											paintKey(keylb_1p, keyarray1, rand,x2); //새로출력
-										
-//											success.setVisible(false);
+											paintKey(keylb_1p, keyarray1, rand,x2); //새로출력		
 										}
 										
 									}else { //틀리는 순간
 										fail.setVisible(true);
-										removeBuger(buger);
-										k1=0;b=1; //초기화
+										removeBuger(delbuguer);
+										k1=0;b=0;
 										removeKey(keylb_1p); //키 지우고
 										paintKey(keylb_1p, keyarray1, rand,x2); //새로출력
 									}
@@ -178,9 +180,10 @@ public class _1_bugerTestpanel extends JPanel{
 
 		
 	}
-	protected void removeBuger(JLabel[] buger) {
-		for(int i=1; i<buger.length; i++) {
-			this.remove(buger[i]);
+	protected void removeBuger(ArrayList<JLabel> delbuger) {
+//		System.out.println("remove");
+		for(int i=0; i<delbuger.size(); i++) {
+			this.remove(delbuger.get(i));
 		}
 	}
 	synchronized protected int keyCode (int index,String p) { //rand값에 따라 키 코드 리턴
