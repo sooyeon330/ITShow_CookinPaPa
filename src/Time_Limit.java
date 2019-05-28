@@ -29,7 +29,6 @@ public class Time_Limit extends Thread{
 		label.setHorizontalAlignment(SwingConstants.CENTER);
 		label.setBounds(0, 0, 150, 100);
 		label.setBackground(Color.white);
-		myPanel.add(label);
 		
 	}
 	
@@ -48,6 +47,7 @@ public class Time_Limit extends Thread{
 	
 	@Override
 	public void run() {
+		myPanel.add(label);
 		while(!stopFlag) {
 			if(i <= 5) label.setForeground(Color.RED);
 			label.setText(Integer.toString(i) + "초");

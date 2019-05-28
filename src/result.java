@@ -34,6 +34,7 @@ public class result extends JPanel{
 		menu.stage1_score = 0; 
 		menu.stage2_score = 0;
 		menu.stage3_score = 0;
+		menu.stage4_score = 0;
 		
 		
 	}

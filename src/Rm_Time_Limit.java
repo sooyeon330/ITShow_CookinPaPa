@@ -28,11 +28,11 @@ public class Rm_Time_Limit extends Thread{
 		label.setHorizontalAlignment(SwingConstants.CENTER);
 		label.setBounds(0, 0, 150, 100);
 		label.setBackground(Color.WHITE);
-		myPanel.add(label);
 	}
 	
 	@Override
 	public void run() {
+		myPanel.add(label);
 		while(!stopFlag) {
 			try {
 				if(i>-1) {					
