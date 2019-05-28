@@ -11,6 +11,8 @@ public class _1_bugerFrame extends JPanel{
 		JPanel panel1 = new _1_bugerTestpanel(frame);
 		JPanel panel2 = new _1_bugerTestpanel2(frame);
 		
+//		Time_Limit timer = new Time_Limit(30, this, frame, 10, k)
+		
 		panel1.setSize(new Dimension(this.WIDTH/2, 720));
 		panel2.setSize(new Dimension(this.WIDTH/2, 720));
 		
