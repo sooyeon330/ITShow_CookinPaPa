@@ -28,18 +28,17 @@ public class Rm_Time_Limit extends Thread{
 		label.setHorizontalAlignment(SwingConstants.CENTER);
 		label.setBounds(0, 0, 150, 100);
 		label.setBackground(Color.WHITE);
-		
 	}
 	
 	@Override
 	public void run() {
+		myPanel.add(label);
 		while(!stopFlag) {
 			try {
 				if(i>-1) {					
 					label.setForeground(Color.RED);
 					label.setText(Integer.toString(i) + "초");
 		//			System.out.println(i);
-					myPanel.add(label);
 					Thread.sleep(1000);
 					i--;	
 				}			 

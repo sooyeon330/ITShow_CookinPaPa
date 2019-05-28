@@ -1,6 +1,8 @@
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -12,6 +14,8 @@ public class Time_Limit extends Thread{
 	JPanel myPanel = new JPanel();
 	JFrame frame = new JFrame();
 	JLabel label = new JLabel();
+	KeyListener kl;
+	
 	boolean stopFlag = false;
 	static boolean complete = false;
 	int num = 0;
@@ -24,31 +28,30 @@ public class Time_Limit extends Thread{
 		label.setFont(new Font("돋움",Font.BOLD,15).deriveFont(40.0f));
 		label.setHorizontalAlignment(SwingConstants.CENTER);
 		label.setBounds(0, 0, 150, 100);
-		label.setBackground(Color.WHITE);
+		label.setBackground(Color.white);
 		
 	}
 	
 	Time_Limit(int i, JPanel myPanel, JFrame frame, int num){
-		this.i = i;
+		this(i,myPanel,frame);
 		this.num = num;
-		this.myPanel = myPanel;
-		this.frame = frame;
-		label.setOpaque(true);
-		label.setFont(new Font("font/A吗户B.TTF",Font.BOLD,15).deriveFont(40.0f));
-		label.setHorizontalAlignment(SwingConstants.CENTER);
 		if(num == 1) label.setBounds(450, 300, 150, 100);
 		else label.setBounds(0, 0, 150, 100);
-		label.setBackground(Color.WHITE);
 		
+	}	
+	
+	Time_Limit(int i, JPanel myPanel, JFrame frame, int num, KeyListener k){
+		this(i,myPanel,frame,num);
+		this.kl = k;
 	}
 	
 	@Override
 	public void run() {
+		myPanel.add(label);
 		while(!stopFlag) {
 			if(i <= 5) label.setForeground(Color.RED);
 			label.setText(Integer.toString(i) + "초");
 		//	System.out.println(i);
-			myPanel.add(label);
 			try {
 				Thread.sleep(500);
 			} catch (InterruptedException e) {
@@ -59,19 +62,14 @@ public class Time_Limit extends Thread{
 				stopFlag= true;
 				complete = false;
 			}
-			if(i == -1) {
-				stopFlag = true; 
-				if(num == 1) {
-					frame.add(new twoResult(frame));
-					num = 0;
-				}
-				else if(num == 2) {
-					frame.add(new result(frame, menu.stage3_score));
-					num = 0;
-				}
-				else {
-					frame.add(new exam(frame));
-				}
+			if(i == -1)	{
+				stopFlag = true;
+				if(num == 1) frame.add(new twoResult(frame));
+				else if(num == 2) frame.add(new result(frame, menu.stage3_score));
+				else frame.add(new exam(frame));
+
+				num = 0;
+				frame.removeKeyListener(kl);
 				frame.remove(myPanel);
 				frame.repaint();
 				frame.revalidate(); 

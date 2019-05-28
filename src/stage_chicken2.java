@@ -69,11 +69,11 @@ class stage_chicken2 extends JPanel{
 				if(e.getX() >= -215 && e.getX() <= 385 && e.getY() >= 184 && e.getY() <= 645 && pause.work) {
 					menu.stage3_score += 2;
 					count++;
-					ingre_chicken.setIcon(chicken[1]);	
-					setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+					ingre_chicken.setIcon(chicken[1]);
 					ingre_garlic.setVisible(false);
-				}else
-					setCursor(new Cursor(Cursor.DEFAULT_CURSOR)); 
+				}
+					
+				setCursor(new Cursor(Cursor.DEFAULT_CURSOR)); 
 			}
 		});
 		
@@ -90,12 +90,11 @@ class stage_chicken2 extends JPanel{
 			public void mouseReleased(MouseEvent e) {
 				if(e.getX() >= 156 && e.getX() <= 757 && e.getY() >= 141 && e.getY() <= 608 && count==1 && pause.work) {
 					menu.stage3_score += 2;
-					ingre_chicken.setIcon(chicken[2]);	
-					setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+					ingre_chicken.setIcon(chicken[2]);
 					ingre_salt.setVisible(false);
 					count++;
-				}else
-					setCursor(new Cursor(Cursor.DEFAULT_CURSOR)); 
+				}
+				setCursor(new Cursor(Cursor.DEFAULT_CURSOR)); 
 			}
 		});
 		
@@ -113,11 +112,10 @@ class stage_chicken2 extends JPanel{
 				if(e.getX() >= -583 && e.getX() <= 14 && e.getY() >= 139 && e.getY() <= 605 && count == 2 && pause.work) {
 					menu.stage3_score += 2;
 					count++;
-					ingre_chicken.setIcon(chicken[3]);	
-					setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+					ingre_chicken.setIcon(chicken[3]);
 					ingre_pepper.setVisible(false);
-				}else
-					setCursor(new Cursor(Cursor.DEFAULT_CURSOR)); 
+				}
+				setCursor(new Cursor(Cursor.DEFAULT_CURSOR)); 
 			}
 		});
 		

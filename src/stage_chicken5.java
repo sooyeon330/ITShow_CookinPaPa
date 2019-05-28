@@ -226,9 +226,8 @@ class stage_chicken5 extends JPanel{
 				
 			}
 		});
-		
-		frame.requestFocusInWindow();
-		frame.addKeyListener(new KeyListener() {
+				
+		KeyListener kl = new KeyListener() {
 				
 			@Override
 			public void keyTyped(KeyEvent e) {}
@@ -259,7 +258,10 @@ class stage_chicken5 extends JPanel{
 					frame.revalidate();
 				}
 			}
-		});
+		};
+		
+		frame.requestFocusInWindow();
+		frame.addKeyListener(kl);
 }
 		
 	

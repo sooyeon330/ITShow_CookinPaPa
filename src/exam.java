@@ -59,11 +59,10 @@ class exam extends JPanel{
 				else if(btn_count == 5) {
 					frame.add(new stage_chicken5(frame));
 				}
-				else {
+				else{
 					frame.add(new stage_chicken6(frame));
 				}
 				btn_count++;
-//				System.out.println("ī��Ʈ : " + btn_count);
 				frame.remove(panel);
 				frame.repaint();
 				frame.revalidate();
@@ -94,7 +93,8 @@ class exam extends JPanel{
 		case 6: 
 			bgimage = bgimage6;
 			break;
-		default : break;
+		default:
+			break;
 		}
 		
 		g.drawImage(bgimage.getImage(),0,0,null);

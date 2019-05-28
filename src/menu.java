@@ -14,6 +14,7 @@ class menu extends JPanel{
 	ImageIcon ramenimg = new ImageIcon("pic/Ramen.png");
 	ImageIcon eggrollimg = new ImageIcon("pic/EggRoll.png");
 	ImageIcon chikenimg = new ImageIcon("pic/Chiken.png");
+	ImageIcon kimbabimg = new ImageIcon("pic/Kimbab.png");
 	ImageIcon tutorial = new ImageIcon("pic/tutorial_btn.png");
 	ImageIcon tutorial_press = new ImageIcon("pic/tutorial_btn_press.png");
 	
@@ -21,10 +22,12 @@ class menu extends JPanel{
 	static int stage1_score = 0;
 	static int stage2_score = 0; 
 	static int stage3_score = 0;
+	static int stage4_score = 0;
 	public static final int RAMEN = 1;
 
 	menu(JFrame frame){
 		setLayout(null);
+		
 		panel = this;
 		
 		add(new back(frame, this, 1));
@@ -32,15 +35,19 @@ class menu extends JPanel{
 		JButton btn1 = new JButton(ramenimg);
 		JButton btn2 = new JButton(eggrollimg);
 		JButton btn3 = new JButton(chikenimg);
+		JButton btn4 = new JButton(kimbabimg);
 		
 		btn1.setBounds(80,250,ramenimg.getIconWidth(),ramenimg.getIconHeight());
 		btn2.setBounds(420,270,eggrollimg.getIconWidth(),eggrollimg.getIconHeight());
 		btn3.setBounds(700,250,chikenimg.getIconWidth(),chikenimg.getIconHeight());
-		btn_setting(btn1);btn_setting(btn2);btn_setting(btn3);
+		btn4.setBounds(130,480,kimbabimg.getIconWidth(),kimbabimg.getIconHeight());
+		btn_setting(btn1);btn_setting(btn2);btn_setting(btn3);btn_setting(btn4);
 		
 		add(btn1);
 		add(btn2);
 		add(btn3);
+		add(btn4);
+		
 		btn1.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -58,8 +65,18 @@ class menu extends JPanel{
 		btn3.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				exam.btn_count++;
+				exam.btn_count = 1;
 				frame.add(new exam(frame));
+				frame.remove(panel);
+				frame.repaint();
+				frame.revalidate();
+			}
+		});
+		btn4.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				exam.btn_count = 7;
+				frame.add(new stage_kimbab5(frame));
 				frame.remove(panel);
 				frame.repaint();
 				frame.revalidate();

@@ -15,13 +15,11 @@ public class two_radish extends JPanel{
 	int i = 0, j = 0;
 	static int count1 = 0;
 	static int count2 = 0;
+	KeyListener kl;
 	
 	two_radish(JFrame frame){
 		setLayout(null);
-		
-		Time_Limit t= new Time_Limit(16, this, frame, 1);
-		t.start();
-		
+
 		JLabel radish1 = new JLabel(radish[i]);
 		JLabel radish2 = new JLabel(radish[j]);
 		
@@ -35,8 +33,8 @@ public class two_radish extends JPanel{
 		
 		add(radish1);add(radish2);add(one_count);add(two_count);
 		
-		frame.requestFocusInWindow();
-		frame.addKeyListener(new KeyListener() {
+		
+		kl = new KeyListener() {
 			
 			@Override
 			public void keyTyped(KeyEvent e) {
@@ -69,7 +67,13 @@ public class two_radish extends JPanel{
 				// TODO Auto-generated method stub
 				
 			}
-		});
+		};
+		
+		Time_Limit t= new Time_Limit(16, this, frame, 1, kl);
+		t.start();
+		
+		frame.requestFocusInWindow();
+		frame.addKeyListener(kl);
 	}
 	
 	private int getIconWidth() {
