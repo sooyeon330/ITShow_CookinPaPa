@@ -53,7 +53,7 @@ public class Time_Limit extends Thread{
 			label.setText(Integer.toString(i) + "초");
 		//	System.out.println(i);
 			try {
-				Thread.sleep(500);
+				Thread.sleep(1000);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
@@ -66,6 +66,7 @@ public class Time_Limit extends Thread{
 				stopFlag = true;
 				if(num == 1) frame.add(new twoResult(frame));
 				else if(num == 2) frame.add(new result(frame, menu.stage3_score));
+				else if(num == 3) frame.add(new exam_kimbab(frame));
 				else frame.add(new exam(frame));
 
 				num = 0;

@@ -37,12 +37,6 @@ class stage_chicken5 extends JPanel{
 		
 		panel = this;
 		
-		Time_Limit tm = new Time_Limit(40, panel, frame);
-		tm.start();
-		
-		Timing t = new Timing(panel, frame);
-		new pause(panel, t, tm);
-		
 		
 		JLabel[] ingre_raw = new JLabel[6];
 		JLabel[] ingre_fry = new JLabel[6];
@@ -72,6 +66,45 @@ class stage_chicken5 extends JPanel{
 		
 		button.setBounds(600, 620, 93, 93);
 		add(button);
+		
+		KeyListener kl = new KeyListener() {
+				
+			@Override
+			public void keyTyped(KeyEvent e) {}
+				
+			@Override
+			public void keyReleased(KeyEvent e) {
+				
+			}
+				
+			@Override
+			public void keyPressed(KeyEvent e) {
+				if(e.getKeyCode() == KeyEvent.VK_SPACE && count2 < 6 && count == 7) {
+					ingre_fry[count2].setVisible(true);
+					if(Timing.x >=460 && Timing.x <=500) {
+						menu.stage3_score += 4;
+						ingre_fry[count2].setIcon(fryChicken);
+					}
+					count2++;
+				}
+				if(count2 == 6) {
+					frame.removeKeyListener(this);
+					Timing.stopFlag = true;
+					Time_Limit.complete = true;
+					count = 0;
+					frame.add(new exam(frame));
+					frame.remove(panel);
+					frame.repaint();
+					frame.revalidate();
+				}
+			}
+		};
+		
+		Time_Limit tm = new Time_Limit(35, panel, frame,0,kl);
+		tm.start();
+		
+		Timing t = new Timing(panel, frame);
+		new pause(panel, t, tm);
 		
 		button.addMouseListener(new MouseAdapter() {
 			@Override
@@ -226,39 +259,6 @@ class stage_chicken5 extends JPanel{
 				
 			}
 		});
-				
-		KeyListener kl = new KeyListener() {
-				
-			@Override
-			public void keyTyped(KeyEvent e) {}
-				
-			@Override
-			public void keyReleased(KeyEvent e) {
-				
-			}
-				
-			@Override
-			public void keyPressed(KeyEvent e) {
-				if(e.getKeyCode() == KeyEvent.VK_SPACE && count2 < 6 && count == 7) {
-					ingre_fry[count2].setVisible(true);
-					if(Timing.x >=460 && Timing.x <=500) {
-						menu.stage3_score += 4;
-						ingre_fry[count2].setIcon(fryChicken);
-					}
-					count2++;
-				}
-				if(count2 == 6) {
-					frame.removeKeyListener(this);
-					Timing.stopFlag = true;
-					Time_Limit.complete = true;
-					count = 0;
-					frame.add(new exam(frame));
-					frame.remove(panel);
-					frame.repaint();
-					frame.revalidate();
-				}
-			}
-		};
 		
 		frame.requestFocusInWindow();
 		frame.addKeyListener(kl);

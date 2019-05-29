@@ -23,6 +23,11 @@ public class stage_kimbab1 extends JPanel{
 		
 		panel = this;
 		
+		Time_Limit tm = new Time_Limit(15, panel, frame,3);
+		tm.start();
+		
+		new pause(panel,tm);
+		
 		JLabel ingre = new JLabel(ingre_img[0]);
 		ingre.setSize(800, 700);
 		ingre.setBounds(120, -60, ingre.getWidth(), ingre.getHeight());
@@ -33,7 +38,13 @@ public class stage_kimbab1 extends JPanel{
 				super.mouseClicked(e);
 				click_count++;
 				ingre.setIcon(ingre_img[click_count/4]);
+				if(click_count%10 == 0) {
+					menu.stage4_score += 3;
+					System.out.println(menu.stage4_score);
+				}
 				if(click_count/4 >= 19) {
+					click_count = 0;
+					Time_Limit.complete = true;
 					frame.add(new exam_kimbab(frame));
 					frame.remove(panel);
 					frame.repaint();

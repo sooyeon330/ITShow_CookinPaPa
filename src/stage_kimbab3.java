@@ -18,17 +18,26 @@ import javax.swing.JPanel;
 public class stage_kimbab3 extends JPanel{
 	ImageIcon bgimage= new ImageIcon("pic/table.png");
 	ImageIcon bowlImag[] = {new ImageIcon("pic/kimbab_bowl1.png"),new ImageIcon("pic/kimbab_bowl2.png"),
-			new ImageIcon("pic/kimbab_bowl3.png"),new ImageIcon("pic/kimbab_bowl4.png")};
+			new ImageIcon("pic/kimbab_bowl3.png"),new ImageIcon("pic/kimbab_bowl4.png"),new ImageIcon("pic/kimbab_bowl5.png")};
 	ImageIcon salt = new ImageIcon("pic/salt.png");
 	ImageIcon sesameOil = new ImageIcon("pic/sesameOil.png");
 	ImageIcon sesame = new ImageIcon("pic/sesame.png");
 	JPanel panel;
+	
 	int count = 0;
+	int count2 = 0;
+	boolean clear = false;
+	int startX, startY, endX, endY;
 	
 	public stage_kimbab3(JFrame frame) {
 		setLayout(null);
 		
 		panel = this;
+		
+		Time_Limit tm = new Time_Limit(25, panel, frame,3);
+		tm.start();
+		
+		new pause(panel,tm);
 		
 		JLabel bowl = new JLabel(bowlImag[0]);
 		bowl.setSize(610, 500);
@@ -61,6 +70,7 @@ public class stage_kimbab3 extends JPanel{
 			public void mouseReleased(MouseEvent e) {
 				if(e.getX() >= -215 && e.getX() <= 385 && e.getY() >= 184 && e.getY() <= 645 && pause.work) {
 					count++;
+					menu.stage4_score += 3;
 					bowl.setIcon(bowlImag[1]);
 					ingre_sesameOil.setVisible(false);
 				}
@@ -80,6 +90,7 @@ public class stage_kimbab3 extends JPanel{
 			@Override
 			public void mouseReleased(MouseEvent e) {
 				if(e.getX() >= 156 && e.getX() <= 757 && e.getY() >= 141 && e.getY() <= 608 && count==1 && pause.work) {
+					menu.stage4_score += 3;
 					bowl.setIcon(bowlImag[2]);	
 					ingre_salt.setVisible(false);
 					count++;
@@ -101,13 +112,66 @@ public class stage_kimbab3 extends JPanel{
 			public void mouseReleased(MouseEvent e) {
 				if(e.getX() >= -583 && e.getX() <= 14 && e.getY() >= 139 && e.getY() <= 605 && count == 2 && pause.work) {
 					count++;
+					menu.stage4_score += 3;
 					bowl.setIcon(bowlImag[3]);
 					ingre_sesame.setVisible(false);
+					clear = true;
 				}
 				setCursor(new Cursor(Cursor.DEFAULT_CURSOR)); 
 			}
-		});
+		});		
 		
+		Brush b = new Brush();
+		
+		bowl.addMouseMotionListener(new MouseMotionListener() {
+			@Override
+			public void mouseMoved(MouseEvent e) {
+				repaint();
+				revalidate();
+			}
+				
+			@Override
+			public void mouseDragged(MouseEvent e) {
+				if(clear && pause.work) {
+				b.xx = e.getX();
+				b.yy = e.getY();
+				b.printAll(bowl.getGraphics());
+				}
+			}
+		});
+	
+			
+		bowl.addMouseListener(new MouseAdapter() {
+				
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				endX = e.getX();
+				endY = e.getY();
+				//System.out.println(e.getY());
+				if(pause.work) {
+					if(endX + startX >= 400 && endY + startY >= 500) {
+						count2++;
+						menu.stage4_score += 3;
+					}
+						
+					if (count2 == 5) bowl.setIcon(bowlImag[4]);
+					else if(count2 > 5) {
+						Time_Limit.complete = true;
+						frame.add(new exam_kimbab(frame));
+						frame.remove(panel);
+						frame.repaint();
+						frame.revalidate();
+					}
+				}
+			}
+				
+				@Override
+			public void mousePressed(MouseEvent e) {
+				startX = e.getX();
+				startY = e.getY();
+			}
+		});
+			
 		
 
 	}

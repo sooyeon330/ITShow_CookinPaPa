@@ -75,7 +75,7 @@ class menu extends JPanel{
 		btn4.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				exam.btn_count = 1;
+				exam_kimbab.btn_count = 1;
 				frame.add(new exam_kimbab(frame));
 				frame.remove(panel);
 				frame.repaint();

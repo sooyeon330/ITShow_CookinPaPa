@@ -21,6 +21,7 @@ import javax.swing.SwingUtilities;
 	private static final String Ramen_TABLE_NAME = "Ramen_Rank";
 	private static final String Egg_TABLE_NAME = "Egg_Rank";
 	private static final String Chicken_TABLE_NAME = "Chicken_Rank";
+	private static final String Kimbab_TABLE_NAME = "Kimbab_Rank";
 	public insert_Dialog(int stage, int score) {
 		setLayout(null);
 		setPreferredSize(new Dimension(300, 200));
@@ -38,6 +39,7 @@ import javax.swing.SwingUtilities;
 				case 1: RankDAO.add(rank,Ramen_TABLE_NAME); break;
 				case 2: RankDAO.add(rank,Egg_TABLE_NAME); break;
 				case 3: RankDAO.add(rank,Chicken_TABLE_NAME); break;
+				case 4: RankDAO.add(rank,Kimbab_TABLE_NAME); break;
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

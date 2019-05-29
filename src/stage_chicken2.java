@@ -126,7 +126,6 @@ class stage_chicken2 extends JPanel{
 			@Override
 			public void mouseMoved(MouseEvent e) {
 				if(count == 3) {
-					panel.setVisible(false);
 					Time_Limit.complete = true;
 					frame.add(new exam(frame));
 					frame.remove(panel);

@@ -17,9 +17,9 @@ public class stage_kimbab2 extends JPanel{
 	
 	ImageIcon panimg = new ImageIcon("pic/ori_fan.png");
 	
-	ImageIcon[] ingreimg = {new ImageIcon("pic/kimbab_ham_before.png"),new ImageIcon("pic/kimbab_ham_after.png"),
-			new ImageIcon("pic/kimbab_radish_before.png"),new ImageIcon("pic/kimbab_radish_after.png"),
-			new ImageIcon("pic/kimbab_spinach_before.png"),new ImageIcon("pic/kimbab_spinach_after.png")};
+	ImageIcon[] ingreimg = {new ImageIcon("pic/kimbab_ham_before.png"),
+			new ImageIcon("pic/kimbab_carrot_before.png"),
+			new ImageIcon("pic/kimbab_spinach_before.png")};
 	
 	ImageIcon keyimg[] = { new ImageIcon("pic/key1.png"), // left
 			new ImageIcon("pic/key2.png"), // up
@@ -44,14 +44,21 @@ public class stage_kimbab2 extends JPanel{
 	public static final int right = 2; //방향키 키코드
 	public static final int down = 3; //방향키 키코드
 
-	int k1=0,k2=0;//keyarray에 쓸 인덱스
+	int k1=0,k2=0,i=0;//keyarray에 쓸 인덱스
 	
+	boolean correct_boolean[] = {false,false,false};
 	int correct_count = 0;
 	
+	int temp_count = 0;
 	public stage_kimbab2(JFrame frame) {
 		setLayout(null);
 		
 		panel = this;	
+		
+		Time_Limit tm = new Time_Limit(20, panel, frame,3);
+		tm.start();
+		
+		new pause(panel,tm);
 
 		JLabel ingre = new JLabel(ingreimg[0]);
 		ingre.setBounds(300, 0, ingreimg[0].getIconWidth(), ingreimg[0].getIconWidth());
@@ -79,26 +86,37 @@ public class stage_kimbab2 extends JPanel{
 			public void keyPressed(KeyEvent e) {
 				System.out.println("keypress1");
 				keylb[k1].setIcon(presskeyimg[keyarray[0][k1]]); //라벨의 맞는 순서의 이미지를 가져옴
-				
 				if(e.getKeyCode() == keyarray[1][k1++]) { //누른키와 눌러야하는 키가 같으면
-					System.out.println("맞음");
 					if(k1 > 3) { //인덱스 넘어가면
-						correct_count += k1; //초기화
+						correct_count+=k1;
 						k1=0; //초기화
+						
+						correct_boolean[i++] = true;
+						
+						if(correct_boolean[1]) {
+							ingre.setIcon(ingreimg[1]);
+							menu.stage4_score += 5;
+						}
+						else if(correct_boolean[0]) {
+							ingre.setIcon(ingreimg[2]);
+							menu.stage4_score += 5;
+						}
+					
 						if(correct_count >= 12) {
-							ingre.setIcon(ingreimg[5]);
+							menu.stage4_score += 5;
+							correct_count = 0;
+							correct_boolean = null;
+							Time_Limit.complete = true;
 							frame.add(new exam_kimbab(frame));
 							frame.remove(panel);
 							frame.repaint();
 							frame.revalidate();
 						}
-						
 						removeKey(keylb, keyarray); //키 지우고
 						paintKey(keylb, keyarray, rand,x1); //새로출력
 					}
 					
 				}else { //틀리는 순간
-					System.out.println("틀림");
 					k1=0; //초기화
 					removeKey(keylb, keyarray); //키 지우고
 					paintKey(keylb, keyarray, rand,x1); //새로출력

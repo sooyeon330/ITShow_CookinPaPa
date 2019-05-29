@@ -176,8 +176,18 @@ class stage_chicken3 extends JPanel{
 				if(pause.work) {
 					if(endX + startX >= 400 && endY + startY >= 500) count2++;
 						
-					if(count2 >= 5) {
+					if(count2 == 4) {
 						ingre_sauce.setIcon(sauce[5]);
+						count2++;
+					}
+					else if(count2 >= 5) {
+						count = 0;
+						count2 = 0;
+						Time_Limit.complete = true;
+						frame.add(new exam(frame));
+						frame.remove(panel);
+						frame.repaint();
+						frame.revalidate();
 					}
 				}
 			}
@@ -186,36 +196,6 @@ class stage_chicken3 extends JPanel{
 			public void mousePressed(MouseEvent e) {
 				startX = e.getX();
 				startY = e.getY();
-			}
-		});
-		
-		
-		ingre_sauce.addMouseMotionListener(new MouseMotionListener() {
-			
-			@Override
-			public void mouseMoved(MouseEvent e) {
-				if(count2 >= 5) {
-					setVisible(false);
-					try {
-						Thread.sleep(150);
-					} catch (InterruptedException e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
-					}
-					count2 = 0;
-					Time_Limit.complete = true;
-					frame.add(new exam(frame));
-					frame.remove(panel);
-					frame.repaint();
-					frame.revalidate();
-				}
-				
-			}
-			
-			@Override
-			public void mouseDragged(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
 			}
 		});
 	}

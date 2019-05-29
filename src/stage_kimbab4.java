@@ -8,6 +8,7 @@ import java.awt.event.KeyListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -34,6 +35,11 @@ public class stage_kimbab4 extends JPanel{
 		setLayout(null);
 		
 		panel = this;
+
+		Time_Limit tm = new Time_Limit(25, panel, frame,3);
+		tm.start();
+
+		new pause(panel, tm);
 		
 		JLabel kimbab = new JLabel(kimbabImg[0]);
 		JLabel ham = new JLabel(hamImg);
@@ -66,6 +72,7 @@ public class stage_kimbab4 extends JPanel{
 				if(e.getX() >= 465 && e.getX() <= 940 && e.getY() >= -437 && e.getY() <= -39 &&count==1 && pause.work) {
 					kimbab.setIcon(kimbabImg[2]);		
 					ham.setVisible(false);
+					menu.stage4_score += 3;
 					count++;
 				}
 				setCursor(new Cursor(Cursor.DEFAULT_CURSOR)); 
@@ -86,6 +93,7 @@ public class stage_kimbab4 extends JPanel{
 				if(e.getX() >= 472 && e.getX() <= 961 && e.getY() >= -511 && e.getY() <= -120 && count==3 && pause.work) {
 					kimbab.setIcon(kimbabImg[4]);	
 					carrot.setVisible(false);
+					menu.stage4_score += 3;
 					count++;
 				}
 				setCursor(new Cursor(Cursor.DEFAULT_CURSOR)); 
@@ -105,6 +113,7 @@ public class stage_kimbab4 extends JPanel{
 				if(e.getX() >= 472 && e.getX() <= 915 && e.getY() >= -568 && e.getY() <= -183 && count==2 && pause.work) {
 					kimbab.setIcon(kimbabImg[3]);	
 					radish.setVisible(false);
+					menu.stage4_score += 3;
 					count++;
 				}
 				setCursor(new Cursor(Cursor.DEFAULT_CURSOR)); 
@@ -125,6 +134,7 @@ public class stage_kimbab4 extends JPanel{
 				if(e.getX() >= -65 && e.getX() <= 416 && e.getY() >= -426 && e.getY() <= -34 && count==4 && pause.work) {
 					kimbab.setIcon(kimbabImg[5]);
 					spinach.setVisible(false);
+					menu.stage4_score += 3;
 					count++;
 				}
 				
@@ -146,6 +156,7 @@ public class stage_kimbab4 extends JPanel{
 				if(e.getX() >= -62 && e.getX() <= 427 && e.getY() >= -512 && e.getY() <= -115 && count==5 && pause.work) {
 					kimbab.setIcon(kimbabImg[6]);
 					egg.setVisible(false);
+					menu.stage4_score += 3;
 					count++;
 				}
 					
@@ -168,9 +179,31 @@ public class stage_kimbab4 extends JPanel{
 					kimbab.setIcon(kimbabImg[1]);	
 					setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
 					rice.setVisible(false);
+					menu.stage4_score += 2;
 					count++;
 				}else
 					setCursor(new Cursor(Cursor.DEFAULT_CURSOR)); 
+			}
+		});		
+		
+		kimbab.addMouseMotionListener(new MouseMotionListener() {
+			
+			@Override
+			public void mouseMoved(MouseEvent e) {
+				if(count >= 6) {
+					Time_Limit.complete = true;
+					frame.add(new exam_kimbab(frame));
+					frame.remove(panel);
+					frame.repaint();
+					frame.revalidate();
+				}
+				
+			}
+			
+			@Override
+			public void mouseDragged(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
 			}
 		});
 		

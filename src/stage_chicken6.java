@@ -64,10 +64,13 @@ class stage_chicken6 extends JPanel{
 				if(pause.work) {
 					if(endX + startX >= 400 && endY + startY >= 500) count++;
 						
-					if(count == 10) {
+					if(count == 9) {
 						ingre_chicken.setIcon(chicken[1]);
 						menu.stage3_score += 5;
+					}
+					else if(count == 10) {
 						Time_Limit.complete = true;
+						count = 0;
 						frame.add(new result(frame,menu.stage3_score));
 						frame.remove(panel);
 						frame.repaint();
