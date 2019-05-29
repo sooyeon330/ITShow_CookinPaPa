@@ -27,11 +27,6 @@ class stage_chicken4 extends JPanel{
 		
 		panel = this;
 		
-		Time_Limit tm = new Time_Limit(15, panel, frame);
-		tm.start();
-		
-		new pause(panel,tm);
-		
 		JPanel panel = this;
 		
 		JLabel confirm = new JLabel();
@@ -45,8 +40,7 @@ class stage_chicken4 extends JPanel{
 		ingre_chicken.setBounds(x,y,92,144);
 		add(ingre_chicken);
 		
-		frame.requestFocusInWindow();
-		frame.addKeyListener(new KeyListener() {
+		KeyListener kl = new KeyListener() {
 			@Override
 			public void keyTyped(KeyEvent e) {
 				// TODO Auto-generated method stub
@@ -86,8 +80,16 @@ class stage_chicken4 extends JPanel{
 				
 				
 			}
-		});
+		};
+
+		frame.requestFocusInWindow();
+		frame.addKeyListener(kl);
+
 		
+		Time_Limit tm = new Time_Limit(15, panel, frame, 3, kl);
+		tm.start();
+		
+		new pause(panel,tm);
 	}
 
 	@Override

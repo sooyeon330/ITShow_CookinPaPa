@@ -16,7 +16,7 @@ import javax.swing.SwingUtilities;
 class TitlePanel extends JPanel{
 	JButton button1,button2;
 	ImageIcon bgimage = new ImageIcon("pic/title.png");
-	ImageIcon start = new ImageIcon("pic/start_btn.png");
+	ImageIcon start = new ImageIcon("pic/start_btn3.png");
 	ImageIcon start_press = new ImageIcon("pic/start_btn_press.png");
 	ImageIcon rank = new ImageIcon("pic/ranking_btn.png");
 	ImageIcon rank_press = new ImageIcon("pic/ranking_btn_pressed.png");
@@ -57,7 +57,7 @@ class TitlePanel extends JPanel{
 				frame.revalidate();
 			}
 		});
-		button1.setBounds(60,600,200,80);		
+		button1.setBounds(60,600,270,80);		
 		add(button1);
 		
 		button2.setBorderPainted(false);

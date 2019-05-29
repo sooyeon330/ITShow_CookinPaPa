@@ -24,12 +24,7 @@ public class _1_bugerTestpanel extends JPanel{
 							new ImageIcon("pic/presskey3.png"), //right
 							new ImageIcon("pic/presskey4.png")}; //down
 //	
-	ImageIcon buger1img = new ImageIcon("pic/hamburger1.png");
-//	ImageIcon buger2img = new ImageIcon("pic/hamburger2.png");
-//	ImageIcon buger3img = new ImageIcon("pic/hamburger3.png");
-//	ImageIcon buger4img = new ImageIcon("pic/hamburger4.png");
-//	ImageIcon buger5img = new ImageIcon("pic/hamburger5.png");
-//	ImageIcon buger7img = new ImageIcon("pic/hamburger7.png");
+	ImageIcon basebugimg = new ImageIcon("pic/hamburger1.png");
 	
 	ImageIcon successimg = new ImageIcon("pic/success.png");
 	ImageIcon failimg = new ImageIcon("pic/fail.png");
@@ -49,20 +44,19 @@ public class _1_bugerTestpanel extends JPanel{
 	JPanel panel;
 	static ArrayList<JLabel> delbuguer = new ArrayList<>();
 	static int delidx=0;
-	
+	KeyListener klisten = null;
 	_1_bugerTestpanel(JFrame frame) {
 		setLayout(null);
 		panel = this;
+		
 		
 		int rand = (int) (Math.random()*4);
 		int keyarray1[][] = new int[4][4];//0 : rand, 1 : keyCode()
 		
 		//버거패티
-		JLabel basebuger = new JLabel(buger1img);
+		JLabel basebuger = new JLabel(basebugimg);
 		String bugername[] = {"buger2img","buger3img","buger4img","buger5img","buger7img","buger7img"};
-		basebuger.setBounds(100, 530, buger1img.getIconWidth(), buger1img.getIconHeight());
-		
-		
+		basebuger.setBounds(100, 530, basebugimg.getIconWidth(), basebugimg.getIconHeight());
 
 		//성공 실패
 		JLabel success = new JLabel(successimg);
@@ -73,7 +67,7 @@ public class _1_bugerTestpanel extends JPanel{
 		success.setVisible(false);
 		fail.setVisible(false);
 		
-		
+		//key이미지 셋팅
 		for(int i=0; i<4; i++) {
 			keyimg[i] = ImageResize(w, h, keyimg[i]);
 			presskeyimg[i] = ImageResize(w, h, presskeyimg[i]);
@@ -90,7 +84,7 @@ public class _1_bugerTestpanel extends JPanel{
 			@Override
 			public void run() {
 				
-					KeyListener klisten = new KeyAdapter() {
+				klisten = new KeyAdapter() {
 						  
 						@Override
 						public void keyPressed(KeyEvent e) {
@@ -142,8 +136,8 @@ public class _1_bugerTestpanel extends JPanel{
 			}//run
 		});//thread
 		
-
-		
+		Time_Limit timer = new Time_Limit(30, panel, frame, 2, klisten);
+		timer.start();
 		p1.start(); 
 		
 		
