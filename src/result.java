@@ -35,7 +35,8 @@ public class result extends JPanel{
 		menu.stage2_score = 0;
 		menu.stage3_score = 0;
 		menu.stage4_score = 0;
-		
+		exam.btn_count = 0;
+		exam_kimbab.btn_count = 0;
 		
 	}
 	

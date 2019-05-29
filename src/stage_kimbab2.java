@@ -87,7 +87,7 @@ public class stage_kimbab2 extends JPanel{
 						k1=0; //초기화
 						if(correct_count >= 12) {
 							ingre.setIcon(ingreimg[5]);
-							frame.add(new stage_kimbab3(frame));
+							frame.add(new exam_kimbab(frame));
 							frame.remove(panel);
 							frame.repaint();
 							frame.revalidate();

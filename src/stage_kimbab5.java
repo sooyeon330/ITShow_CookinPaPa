@@ -18,6 +18,7 @@ public class stage_kimbab5 extends JPanel{
 	JPanel panel;
 	int count = 0;
 	
+	
 	public stage_kimbab5(JFrame frame) {
 		setLayout(null);
 		
@@ -26,8 +27,8 @@ public class stage_kimbab5 extends JPanel{
 		Timing t = new Timing(panel, frame);
 		t.start();
 		
-		JLabel kimbab = new JLabel(kimbabImg[0]);
-		setBounds(100,-100,kimbabImg[0].getIconWidth(),kimbabImg[0].getIconHeight());
+		JLabel kimbab = new JLabel(kimbabImg[1]);
+		setBounds(0,0,kimbabImg[1].getIconWidth(),kimbabImg[1].getIconHeight());
 		add(kimbab);
 		
 		KeyListener kl = new KeyListener() {
@@ -52,6 +53,10 @@ public class stage_kimbab5 extends JPanel{
 					}
 					if(count == 5) {
 						frame.removeKeyListener(this);
+						frame.add(new result(frame, menu.stage4_score));
+						frame.remove(panel);
+						frame.repaint();
+						frame.revalidate();
 					}
 				}
 			}

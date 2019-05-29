@@ -34,7 +34,7 @@ public class stage_kimbab1 extends JPanel{
 				click_count++;
 				ingre.setIcon(ingre_img[click_count/4]);
 				if(click_count/4 >= 19) {
-					frame.add(new stage_kimbab2(frame));
+					frame.add(new exam_kimbab(frame));
 					frame.remove(panel);
 					frame.repaint();
 					frame.revalidate();
