@@ -7,13 +7,14 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 class back extends JLabel{
-	ImageIcon stop = new ImageIcon("pic/back.png");
+	ImageIcon stop = new ImageIcon("pic/back_btn_unclick.png");
+	ImageIcon stop2 = new ImageIcon("pic/back_btn_click.png");
 	
 	back(JFrame frame, JPanel myPanel){
-
 		setLayout(null);
 		
 		setIcon(stop);
+		
 		setBounds(930,10,stop.getIconWidth(),stop.getIconHeight());
 		addMouseListener(new MouseAdapter() {
 			@Override
@@ -23,9 +24,22 @@ class back extends JLabel{
 				make_eggroll.printcnt=0;
 				frame.add(new menu(frame));
 				frame.remove(myPanel);
-//				myPanel.setVisible(false);
 				frame.repaint(); 
 				frame.revalidate();
+			}
+			
+			@Override
+			public void mousePressed(MouseEvent e) {
+				// TODO Auto-generated method stub
+				super.mousePressed(e);
+				setIcon(stop2);
+			}
+			
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				// TODO Auto-generated method stub
+				super.mouseReleased(e);
+				setIcon(stop);
 			}
 		});
 	}
@@ -35,7 +49,7 @@ class back extends JLabel{
 		setLayout(null);
 		
 		setIcon(stop);
-		setBounds(930,10,stop.getIconWidth(),stop.getIconHeight());
+		setBounds(925,10,stop.getIconWidth(),stop.getIconHeight());
 		addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -44,6 +58,20 @@ class back extends JLabel{
 				frame.remove(myPanel);
 				frame.repaint();
 				frame.revalidate();
+			}
+			
+			@Override
+			public void mousePressed(MouseEvent e) {
+				// TODO Auto-generated method stub
+				super.mousePressed(e);
+				setIcon(stop2);
+			}
+			
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				// TODO Auto-generated method stub
+				super.mouseReleased(e);
+				setIcon(stop);
 			}
 		});
 	}
