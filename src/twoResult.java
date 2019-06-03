@@ -24,7 +24,7 @@ public class twoResult extends JPanel{
 			result.setText("P1");
 		}
 		else if(score1 == score2){
-			result.setText("X");
+			result.setText("무승부");
 		}
 		else {
 			result.setText("P2");

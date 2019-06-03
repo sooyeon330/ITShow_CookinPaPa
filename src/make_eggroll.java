@@ -121,28 +121,15 @@ public class make_eggroll extends JPanel {
 	}
 
 	static int printcnt=0;
-	Font font = new Font("나눔스퀘어", Font.BOLD, 100);
-	JButton rankbtn = new JButton("점수등록");
-	public static final int EGG = 2;
 	@Override
 	protected void paintComponent(Graphics g) {
 		if(printcnt ==0) 
 		 g.drawImage(bgimage.getImage(),0,0,null); 
 		else if(printcnt==1) {
-			g.drawImage(resultimg.getImage(),0,0,null);
-			g.setColor(Color.BLACK);
-			g.setFont(font);
-	//		System.out.println(menu.stage2_score); 
-			g.drawString(Integer.toString(menu.stage2_score/2), 500, 400);
-			add(new back(frame,this));
-			rankbtn.setBounds(500, 500, 150, 100);
-			add(rankbtn);
-			rankbtn.addActionListener(new ActionListener() {				
-				@Override
-				public void actionPerformed(ActionEvent e) {
-					add(new insert_name(EGG,menu.stage2_score));
-				}
-			});
+			frame.add(new result(frame,menu.stage1_score));
+			frame.remove(this);
+			frame.repaint();
+			frame.revalidate(); 
 		}
 		
 	}

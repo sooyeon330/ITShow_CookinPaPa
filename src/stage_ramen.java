@@ -72,8 +72,9 @@ public class stage_ramen extends JPanel{
 		btnevent.image_crop(gobtn);
 		add(gobtn);add(lb_explane);
 		
-		Rm_Time_Limit timer = new Rm_Time_Limit(11, this, frame);
-		new pause(panel,timer);
+		Timer timer = new Timer(15, panel, frame);
+//		Rm_Time_Limit timer = new Rm_Time_Limit(11, this, frame);
+//		new pause(panel,timer);
 		
 		pot.setBounds(pot_x,pot_y,potimg.getIconWidth(),potimg.getIconHeight());
 		water.setBounds(50,120,waterimg.getIconWidth(),waterimg.getIconHeight());
@@ -89,17 +90,17 @@ public class stage_ramen extends JPanel{
 		
 		flag=1;  i=0;j=0;
 		startbtn.addMouseListener(new MouseAdapter() {
+			
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				if(flag==start) { 
 					startbtn.setIcon(btnedimg); flag = end;
 					timer.start();
-					try {
-						timer.sleep(50);
-					} catch (InterruptedException e1) {
-						e1.printStackTrace();
-					}
 					water.addMouseListener(new MouseAdapter() {
+						@Override
+						public void mouseEntered(MouseEvent e) {
+							setCursor(new Cursor(Cursor.HAND_CURSOR));
+						}
 						@Override
 						public void mousePressed(MouseEvent e) {
 							setCursor(Toolkit.getDefaultToolkit().createCustomCursor(
@@ -109,7 +110,6 @@ public class stage_ramen extends JPanel{
 						public void mouseReleased(MouseEvent e) {
 							if(e.getX()>=pot_x && e.getX()<=pot_x+potimg.getIconWidth() && e.getY()<= pot_y ) {
 								useorder[j++]=w;
-//								pot.setIcon(potimg[2]);	
 								setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
 								water.setVisible(false);
 							}else
@@ -117,6 +117,10 @@ public class stage_ramen extends JPanel{
 						}
 					});
 					soupbase.addMouseListener(new MouseAdapter() {
+						@Override
+						public void mouseEntered(MouseEvent e) {
+							setCursor(new Cursor(Cursor.HAND_CURSOR));
+						}
 						@Override
 						public void mousePressed(MouseEvent e) {
 							setCursor(Toolkit.getDefaultToolkit().createCustomCursor(
@@ -126,7 +130,6 @@ public class stage_ramen extends JPanel{
 						public void mouseReleased(MouseEvent e) {
 							if(e.getX() >= pot_x && e.getX() <= pot_x + potimg.getIconWidth()) {
 								useorder[j++]=s;
-//								pot.setIcon(potimg[3]);	
 								setCursor(new Cursor(Cursor.DEFAULT_CURSOR)); 
 								soupbase.setVisible(false);
 							}else
@@ -134,6 +137,10 @@ public class stage_ramen extends JPanel{
 						}
 					});
 					noodle.addMouseListener(new MouseAdapter() {
+						@Override
+						public void mouseEntered(MouseEvent e) {
+							setCursor(new Cursor(Cursor.HAND_CURSOR));
+						}
 						@Override
 						public void mousePressed(MouseEvent e) {
 							setCursor(Toolkit.getDefaultToolkit().createCustomCursor(
@@ -143,7 +150,6 @@ public class stage_ramen extends JPanel{
 						public void mouseReleased(MouseEvent e) {
 							if(e.getX() >= pot_x && e.getX() <= pot_x + potimg.getIconWidth()) {
 								useorder[j++]=n;
-//								pot.setIcon(potimg[4]);	
 								setCursor(new Cursor(Cursor.DEFAULT_CURSOR)); 
 								noodle.setVisible(false);
 							}else
@@ -151,6 +157,10 @@ public class stage_ramen extends JPanel{
 						}
 					});
 					greenOnion.addMouseListener(new MouseAdapter() {
+						@Override
+						public void mouseEntered(MouseEvent e) {
+							setCursor(new Cursor(Cursor.HAND_CURSOR));
+						}
 						@Override
 						public void mousePressed(MouseEvent e) {
 							setCursor(Toolkit.getDefaultToolkit().createCustomCursor(
@@ -160,8 +170,6 @@ public class stage_ramen extends JPanel{
 						public void mouseReleased(MouseEvent e) {
 							if(e.getX() >= -548 && e.getX() <= -62) {
 								useorder[j++]=g;
-//								System.out.println(e.getX());
-//								pot.setIcon(potimg[5]);	
 								setCursor(new Cursor(Cursor.DEFAULT_CURSOR)); 
 								greenOnion.setVisible(false);
 							}else
@@ -171,6 +179,10 @@ public class stage_ramen extends JPanel{
 					});
 					egg.addMouseListener(new MouseAdapter() {
 						@Override
+						public void mouseEntered(MouseEvent e) {
+							setCursor(new Cursor(Cursor.HAND_CURSOR));
+						}
+						@Override
 						public void mousePressed(MouseEvent e) {
 							setCursor(Toolkit.getDefaultToolkit().createCustomCursor(
 									new ImageIcon("pic/Egg.png").getImage(), new Point(31,31),"custom cursor"));
@@ -179,7 +191,6 @@ public class stage_ramen extends JPanel{
 						public void mouseReleased(MouseEvent e) {
 							if(e.getX() >= -548 && e.getX() <= -62) {
 								useorder[j++]=stage_ramen.e;
-//								pot.setIcon(potimg[6]);	
 								setCursor(new Cursor(Cursor.DEFAULT_CURSOR)); 
 								egg.setVisible(false);
 							}else
@@ -188,8 +199,8 @@ public class stage_ramen extends JPanel{
 					});
 					
 				}
-				else if(flag==end) { //�슂由щ걹
-					startbtn.setIcon(btnimg); timer.stop();
+				else if(flag==end) { 
+					startbtn.setIcon(btnimg);
 					check();
 					printcnt=1;
 					removeAll();
@@ -210,8 +221,6 @@ public class stage_ramen extends JPanel{
 		i=0; int count=0;
 		for(int i=0; i<order.length; i++) {
 			if(order[i] == useorder[i]) count++;
-//			System.out.println(order[i]+","+useorder[i]);
-//			useorder[i]=0;
 	}
 		
 		switch (count) {
@@ -231,27 +240,17 @@ public class stage_ramen extends JPanel{
 	}
 	
 	static int printcnt=0;
-	Font font = new Font("나눔스퀘어", Font.BOLD, 100);	
-	JButton rankbtn = new JButton("점수등록");
 	public static final int RAMEN = 1;
 	@Override
 	protected void paintComponent(Graphics g) {
 		if(printcnt ==0) 
 		 g.drawImage(bgimage.getImage(),0,0,null); 
 		else if(printcnt==1) {
-			g.drawImage(resultimg.getImage(),0,0,null);
-			g.setColor(Color.BLACK);
-			g.setFont(font);
-			g.drawString(Integer.toString(menu.stage1_score), 500, 400);
-			add(new back(frame,panel));
-			rankbtn.setBounds(500, 500, 150, 100);
-			add(rankbtn);
-			rankbtn.addActionListener(new ActionListener() {				
-				@Override
-				public void actionPerformed(ActionEvent e) {
-					add(new insert_name(RAMEN,menu.stage1_score));
-				}
-			});
+			Timer.complete = true;
+			frame.add(new result(frame,menu.stage1_score));
+			frame.remove(panel);
+			frame.repaint();
+			frame.revalidate(); 
 		}
 		
 	}

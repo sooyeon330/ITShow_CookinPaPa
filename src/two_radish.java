@@ -42,14 +42,14 @@ public class two_radish extends JPanel{
 				if(e.getKeyCode() == KeyEvent.VK_SPACE) {
 					i++;
 					if(i == 4) {
-						i = 0;
+						i = 0;twomenu.Score1++;
 					}
 					radish1.setIcon(radish[i]);
 				}
 				if(e.getKeyCode() == KeyEvent.VK_DOWN) {
 					j++;
 					if(j == 4) {
-						j = 0;
+						j = 0;twomenu.Score2++;
 					}
 					radish2.setIcon(radish[j]);
 				}

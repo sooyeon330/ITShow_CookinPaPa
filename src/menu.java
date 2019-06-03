@@ -1,3 +1,4 @@
+import java.awt.Cursor;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -48,41 +49,59 @@ class menu extends JPanel{
 		add(btn3);
 		add(btn4);
 		
-		btn1.addActionListener(new ActionListener() {
+		btn1.addMouseListener(new MouseAdapter() {
 			@Override
-			public void actionPerformed(ActionEvent e) {
+			public void mouseClicked(MouseEvent arg0) {
 				setVisible(false);
 				frame.add(new stage_ramen(frame));
 			}
-		});
-		btn2.addActionListener(new ActionListener() {
 			@Override
-			public void actionPerformed(ActionEvent e) {
+			public void mouseEntered(MouseEvent arg0) {
+				btn1.setCursor(new Cursor(Cursor.HAND_CURSOR));
+			}
+		});
+		
+		
+		btn2.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
 				setVisible(false);
 				frame.add(new stage_eggroll(frame));
 			}
-		});
-		btn3.addActionListener(new ActionListener() {
 			@Override
-			public void actionPerformed(ActionEvent e) {
+			public void mouseEntered(MouseEvent arg0) {
+				btn2.setCursor(new Cursor(Cursor.HAND_CURSOR));
+			}
+		});
+		btn3.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
 				exam.btn_count = 1;
 				frame.add(new exam(frame));
 				frame.remove(panel);
 				frame.repaint();
 				frame.revalidate();
 			}
-		});
-		btn4.addActionListener(new ActionListener() {
 			@Override
-			public void actionPerformed(ActionEvent e) {
+			public void mouseEntered(MouseEvent arg0) {
+				btn3.setCursor(new Cursor(Cursor.HAND_CURSOR));
+			}
+		});
+		btn4.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
 				exam_kimbab.btn_count = 1;
 				frame.add(new exam_kimbab(frame));
 				frame.remove(panel);
 				frame.repaint();
 				frame.revalidate();
 			}
+			@Override
+			public void mouseEntered(MouseEvent arg0) {
+				btn4.setCursor(new Cursor(Cursor.HAND_CURSOR));
+			}
 		});
-		
+			
 		
 		JButton button3 = new JButton(tutorial);
 
@@ -91,11 +110,13 @@ class menu extends JPanel{
 			@Override
 			public void mouseEntered(MouseEvent e) {
 				button3.setIcon(tutorial_press);
+				setCursor(new Cursor(Cursor.HAND_CURSOR));
 			}
 			
 			@Override
 			public void mouseExited(MouseEvent e) {
 				button3.setIcon(tutorial);
+				button3.setCursor(new Cursor(Cursor.HAND_CURSOR));
 			}
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -104,6 +125,7 @@ class menu extends JPanel{
 				frame.repaint();
 				frame.revalidate();
 			}
+		
 		});
 		button3.setBounds(700,600,300,80);		
 		add(button3);

@@ -11,18 +11,24 @@ import javax.swing.JPanel;
 
 public class result extends JPanel{
 	ImageIcon bgimage = new ImageIcon("pic/result.png");
+	ImageIcon btn_unclickimg = new ImageIcon("pic/insert_rank_unclick.png");
+	ImageIcon btn_clickimg = new ImageIcon("pic/insert_rank_click.png");
 	
 	result(JFrame frame, int score){
 		setLayout(null);
-		JButton rankbtn = new JButton("등록");
+		
 		JLabel view = new JLabel();
 		view.setText(Integer.toString(score));
 		view.setFont(new Font("돋움",Font.BOLD,15).deriveFont(120.0f));
 		view.setBounds(480, 300, 300, 200);
 		add(view);
 		
-		rankbtn.setBounds(500, 500, 150, 100);
+		
+		JButton rankbtn = new JButton(btn_unclickimg);
+		menu.btn_setting(rankbtn);
+		rankbtn.setBounds(350, 500, btn_unclickimg.getIconWidth(), btn_unclickimg.getIconHeight());
 		add(rankbtn);
+		
 		rankbtn.addActionListener(new ActionListener() {				
 			@Override
 			public void actionPerformed(ActionEvent e) {

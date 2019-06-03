@@ -53,7 +53,7 @@ class twomenu extends JPanel{
 			}
 			@Override
 			public void mouseEntered(MouseEvent e) {
-				btn_carrot.setCursor(new Cursor(Cursor.HAND_CURSOR));
+				btn_radish.setCursor(new Cursor(Cursor.HAND_CURSOR));
 			}
 		});
 		btn_buger.addMouseListener(new  MouseAdapter() {
@@ -64,7 +64,7 @@ class twomenu extends JPanel{
 			}
 			@Override
 			public void mouseEntered(MouseEvent e) {
-				btn_carrot.setCursor(new Cursor(Cursor.HAND_CURSOR));
+				btn_buger.setCursor(new Cursor(Cursor.HAND_CURSOR));
 			}
 		});
 	}

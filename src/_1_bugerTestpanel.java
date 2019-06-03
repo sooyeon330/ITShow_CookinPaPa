@@ -95,7 +95,7 @@ public class _1_bugerTestpanel extends JPanel{
 									
 									if(e.getKeyCode() == keyarray1[1][k1++]) { //누른키와 눌러야하는 키가 같으면
 										if(k1 > 3) { //인덱스 넘어가면
-											System.out.println("b : "+b);
+											twomenu.Score1 ++;
 											bth = new _1_bugerThread(bugername[b++],panel,delbuger1);
 											if(b > 5) {	
 												success.setVisible(true);

@@ -41,14 +41,14 @@ public class two_carrot extends JPanel{
 				if(e.getKeyCode() == KeyEvent.VK_SPACE) {
 					i++;
 					if(i == 4) {
-						i = 0;
+						i = 0; twomenu.Score1++;
 					}
 					carrot1.setIcon(carrot[i]);
 				}
 				if(e.getKeyCode() == KeyEvent.VK_DOWN) {
 					j++;
 					if(j == 4) {
-						j = 0;
+						j = 0; twomenu.Score2++;
 					}
 					carrot2.setIcon(carrot[j]);
 				}
