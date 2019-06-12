@@ -11,12 +11,12 @@ import javax.swing.JPanel;
 
 public class result extends JPanel{
 	ImageIcon bgimage = new ImageIcon("pic/result.png");
-	ImageIcon btn_unclickimg = new ImageIcon("pic/insert_rank_unclick.png");
-	ImageIcon btn_clickimg = new ImageIcon("pic/insert_rank_click.png");
+	ImageIcon btn_unclickimg = new ImageIcon("pic/ranking_btn_unclick.png");
+	ImageIcon btn_clickimg = new ImageIcon("pic/ranking_btn_click.png");
 	
-	result(JFrame frame, int score){
+	result(JFrame frame, int score,int stage_num){
 		setLayout(null);
-		
+		int num = stage_num;
 		JLabel view = new JLabel();
 		view.setText(Integer.toString(score));
 		view.setFont(new Font("돋움",Font.BOLD,15).deriveFont(120.0f));
@@ -32,7 +32,7 @@ public class result extends JPanel{
 		rankbtn.addActionListener(new ActionListener() {				
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				add(new insert_name(3,score));
+				add(new insert_name(num,score));
 			}
 		});
 		

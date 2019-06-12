@@ -65,7 +65,7 @@ class stage_chicken5 extends JPanel{
 		}
 		
 		button.setBounds(600, 620, 93, 93);
-		add(button);
+	
 		
 		KeyListener kl = new KeyListener() {
 				
@@ -105,7 +105,7 @@ class stage_chicken5 extends JPanel{
 		
 		Timing t = new Timing(panel, frame);
 		new pause(panel, t, tm);
-		
+		add(button);
 		button.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {

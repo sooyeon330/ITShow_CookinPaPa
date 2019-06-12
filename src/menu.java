@@ -16,8 +16,8 @@ class menu extends JPanel{
 	ImageIcon eggrollimg = new ImageIcon("pic/EggRoll.png");
 	ImageIcon chikenimg = new ImageIcon("pic/Chiken.png");
 	ImageIcon kimbabimg = new ImageIcon("pic/Kimbab.png");
-	ImageIcon tutorial = new ImageIcon("pic/tutorial_btn.png");
-	ImageIcon tutorial_press = new ImageIcon("pic/tutorial_btn_press.png");
+	ImageIcon tutorial = new ImageIcon("pic/tutorial_btn_unclick.png");
+	ImageIcon tutorial_press = new ImageIcon("pic/tutorial_btn_click.png");
 	
 	JPanel panel;
 	static int stage1_score = 0;

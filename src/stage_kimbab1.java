@@ -40,7 +40,6 @@ public class stage_kimbab1 extends JPanel{
 				ingre.setIcon(ingre_img[click_count/4]);
 				if(click_count%10 == 0) {
 					menu.stage4_score += 3;
-					System.out.println(menu.stage4_score);
 				}
 				if(click_count/4 >= 19) {
 					click_count = 0;

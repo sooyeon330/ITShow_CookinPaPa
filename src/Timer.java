@@ -70,8 +70,8 @@ public class Timer extends Thread{
 			if(i == -1)	{
 				stopFlag = true;
 				if(num == 1) { frame.add(new twoResult(frame, twomenu.Score1,twomenu.Score2));}
-				else if(num == 2) frame.add(new result(frame, menu.stage3_score));
-				else if(num == 3) frame.add(new result(frame, menu.stage4_score));
+				else if(num == 2) frame.add(new result(frame, menu.stage3_score,3));
+				else if(num == 3) frame.add(new result(frame, menu.stage4_score,4));
 				else if(num == 4) frame.add(new exam(frame));
 				else if(num == 5) frame.add(new exam_kimbab(frame));
 

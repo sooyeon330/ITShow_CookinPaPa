@@ -126,7 +126,9 @@ public class make_eggroll extends JPanel {
 		if(printcnt ==0) 
 		 g.drawImage(bgimage.getImage(),0,0,null); 
 		else if(printcnt==1) {
-			frame.add(new result(frame,menu.stage1_score));
+
+			System.out.println(menu.stage2_score);
+			frame.add(new result(frame,menu.stage2_score,2));
 			frame.remove(this);
 			frame.repaint();
 			frame.revalidate(); 

@@ -1,3 +1,4 @@
+import java.awt.Cursor;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Image;
@@ -16,12 +17,12 @@ import javax.swing.SwingUtilities;
 class TitlePanel extends JPanel{
 	JButton button1,button2;
 	ImageIcon bgimage = new ImageIcon("pic/title.png");
-	ImageIcon start = new ImageIcon("pic/start_btn3.png");
-	ImageIcon start_press = new ImageIcon("pic/start_btn_press.png");
-	ImageIcon rank = new ImageIcon("pic/ranking_btn.png");
-	ImageIcon rank_press = new ImageIcon("pic/ranking_btn_pressed.png");
-	ImageIcon two = new ImageIcon("pic/2pGame_btn.png");
-	ImageIcon two_press = new ImageIcon("pic/2pGame_btn_press.png");
+	ImageIcon start = new ImageIcon("pic/start_btn_unclick.png");
+	ImageIcon start_press = new ImageIcon("pic/start_btn_click.png");
+	ImageIcon rank = new ImageIcon("pic/ranklist_btn_unclick.png");
+	ImageIcon rank_press = new ImageIcon("pic/ranklist_btn_click.png");
+	ImageIcon two = new ImageIcon("pic/2p_btn_unclick.png");
+	ImageIcon two_press = new ImageIcon("pic/2p_btn_click.png");
 	
 	JPanel panel;
 	
@@ -43,6 +44,7 @@ class TitlePanel extends JPanel{
 			@Override
 			public void mouseEntered(MouseEvent e) {
 				button1.setIcon(start_press);
+				button1.setCursor(new Cursor(Cursor.HAND_CURSOR));
 			}
 			
 			@Override
@@ -67,6 +69,7 @@ class TitlePanel extends JPanel{
 			@Override
 			public void mouseEntered(MouseEvent e) {
 				button2.setIcon(rank_press); 
+				button2.setCursor(new Cursor(Cursor.HAND_CURSOR));
 			}
 			
 			@Override
@@ -94,6 +97,7 @@ class TitlePanel extends JPanel{
 			@Override
 			public void mouseEntered(MouseEvent e) {
 				button3.setIcon(two_press);
+				button3.setCursor(new Cursor(Cursor.HAND_CURSOR));
 			}
 			
 			@Override

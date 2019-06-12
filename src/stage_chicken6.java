@@ -71,7 +71,7 @@ class stage_chicken6 extends JPanel{
 					else if(count == 10) {
 						Timer.complete = true;
 						count = 0;
-						frame.add(new result(frame,menu.stage3_score));
+						frame.add(new result(frame,menu.stage3_score,3));
 						frame.remove(panel);
 						frame.repaint();
 						frame.revalidate(); 

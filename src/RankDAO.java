@@ -10,7 +10,6 @@ import java.util.List;
 public class RankDAO {
 	private static Connection conn = null;
 	private static RankDAO rankDAO = null;
-	private static final String RANK_TABLE_NAME = "Rank";
 	
 	private RankDAO() {}
 	
@@ -53,9 +52,8 @@ public class RankDAO {
 		return lst;
 	}
 	
-	public static boolean delete(Rank rank) throws SQLException {
-		PreparedStatement ps = conn.prepareStatement(String.format("DELETE FROM %s WHERE name = ?", RANK_TABLE_NAME));
-		ps.setString(1, rank.name);
+	public static boolean delete(String table_name) throws SQLException {
+		PreparedStatement ps = conn.prepareStatement(String.format("DELETE FROM %s ", table_name));
 		int res = ps.executeUpdate();
 		ps.close();
 		

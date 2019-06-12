@@ -62,7 +62,6 @@ public class tutorial2 extends JPanel{
 				endX = e.getX();
 				endY = e.getY();
 
-				System.out.println(e.getY());
 				if(endX + startX >= 900 && endY + startY >= 1000 && startX >= 210 && endX <= 840 && 
 						startY >= 220 && endY <= 690) {
 					ingre.setIcon(ingre_s[1]);
@@ -75,10 +74,6 @@ public class tutorial2 extends JPanel{
 			public void mousePressed(MouseEvent e) {
 				startX = e.getX();
 				startY = e.getY();
-			}
-			@Override
-			public void mouseClicked(MouseEvent e) {
-//				System.out.println(e.getY());
 			}
 		});
 		

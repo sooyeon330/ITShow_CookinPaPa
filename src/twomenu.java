@@ -60,7 +60,7 @@ class twomenu extends JPanel{
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				setVisible(false);
-				frame.add(new _1_bugerFrame(frame));
+				frame.add(new bugerFrame(frame));
 			}
 			@Override
 			public void mouseEntered(MouseEvent e) {

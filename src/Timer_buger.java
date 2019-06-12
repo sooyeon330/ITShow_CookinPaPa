@@ -38,8 +38,8 @@ public class Timer_buger extends Thread{
 		this.Panel2 = panel2;
 		this.num = num;
 		label.setBounds(0, 0, 150, 100);
-		this.k1 = _1_bugerTestpanel.klisten1;
-		this.k2 = _1_bugerTestpanel2.klisten2;
+		this.k1 = bugerTestpanel.klisten1;
+		this.k2 = bugerTestpanel2.klisten2;
 		
 	}
 

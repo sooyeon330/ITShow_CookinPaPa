@@ -84,7 +84,6 @@ public class stage_kimbab2 extends JPanel{
 			
 			@Override
 			public void keyPressed(KeyEvent e) {
-				System.out.println("keypress1");
 				keylb[k1].setIcon(presskeyimg[keyarray[0][k1]]); //라벨의 맞는 순서의 이미지를 가져옴
 				if(e.getKeyCode() == keyarray[1][k1++]) { //누른키와 눌러야하는 키가 같으면
 					if(k1 > 3) { //인덱스 넘어가면
@@ -155,7 +154,6 @@ public class stage_kimbab2 extends JPanel{
 			else if(x==x2)
 				array[1][i] = keyCode(rand,"2");
 			spacing += 10; //키 간격 조정
-			System.out.println("add"+rand);
 			
 		}
 	}

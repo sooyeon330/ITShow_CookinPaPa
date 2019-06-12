@@ -62,7 +62,7 @@ public class stage_kimbab5 extends JPanel{
 						Timing.stopFlag = true;
 						Timer.complete = true;
 						frame.removeKeyListener(this);
-						frame.add(new result(frame, menu.stage4_score));
+						frame.add(new result(frame, menu.stage4_score,4));
 						frame.remove(panel);
 						frame.repaint();
 						frame.revalidate();

@@ -96,6 +96,7 @@ public class stage_ramen extends JPanel{
 				if(flag==start) { 
 					startbtn.setIcon(btnedimg); flag = end;
 					timer.start();
+					
 					water.addMouseListener(new MouseAdapter() {
 						@Override
 						public void mouseEntered(MouseEvent e) {
@@ -116,6 +117,7 @@ public class stage_ramen extends JPanel{
 								setCursor(new Cursor(Cursor.DEFAULT_CURSOR)); 
 						}
 					});
+					
 					soupbase.addMouseListener(new MouseAdapter() {
 						@Override
 						public void mouseEntered(MouseEvent e) {
@@ -247,7 +249,7 @@ public class stage_ramen extends JPanel{
 		 g.drawImage(bgimage.getImage(),0,0,null); 
 		else if(printcnt==1) {
 			Timer.complete = true;
-			frame.add(new result(frame,menu.stage1_score));
+			frame.add(new result(frame,menu.stage1_score,1));
 			frame.remove(panel);
 			frame.repaint();
 			frame.revalidate(); 

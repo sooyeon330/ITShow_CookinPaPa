@@ -78,6 +78,7 @@ public class stage_eggroll extends JPanel{
 					setVisible(false);
 					try {
 						Thread.sleep(150);
+						System.out.println(menu.stage2_score);
 						frame.add(new mix_egg(frame));
 					} catch (InterruptedException e1) {
 						e1.printStackTrace();
@@ -122,7 +123,6 @@ public class stage_eggroll extends JPanel{
 						
 					} else {
 						heart[--count].setIcon(broken_heartimg);
-//						count++;
 						if(count<=3) { menu.stage2_score+=20;}
 						else if(count==3) {menu.stage2_score+=50;}
 						

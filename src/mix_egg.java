@@ -44,7 +44,6 @@ public class mix_egg extends JPanel{
 		this.panel = this;
 
 		ck_panel.setBounds(700,500,300,100);		
-//		ck_panel.setBounds(700,500,checkimg.getIconWidth()*3+20,checkimg.getIconHeight()+10);
 		while(i<3)  {
 			check[i].setBounds(0,0,eggimg.getIconWidth(),eggimg.getIconHeight());
 			ck_panel.add(check[i++]);
@@ -67,13 +66,12 @@ public class mix_egg extends JPanel{
 				try {
 					while(repeat) {
 						long start = System.currentTimeMillis();
-						// 寃뚯엫 濡쒖쭅
 						move.logic();
 						move.setVisible(false);
 						move.repaint();
 						move.setVisible(true);
 						long end = System.currentTimeMillis();
-						long elapsed = (end - start); // 寃뚯엫 濡쒖쭅 + 洹몃━湲� 泥섎━ �떆媛�
+						long elapsed = (end - start);
 						
 						if(elapsed < FPS) {
 							Thread.sleep(FPS - elapsed);
@@ -90,7 +88,6 @@ public class mix_egg extends JPanel{
 									} 
 									
 								}
-//								else System.out.println("�뒪�럹�씠�뒪瑜� �늻瑜댁꽭�슂");
 								
 							}
 						});
@@ -126,9 +123,9 @@ public class mix_egg extends JPanel{
 	}
 	
 	void donecount(int score) throws InterruptedException {
-//		System.out.println(menu.stage2_score);
-		menu.stage2_score+=score/3;
-		
+		menu.stage2_score += score/3;
+
+		System.out.println(menu.stage2_score);
 		mixball.setIcon(mixball2_img);
 		thread.join(500);
 		frame.remove(move);
