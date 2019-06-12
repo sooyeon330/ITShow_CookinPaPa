@@ -11,7 +11,8 @@ import javax.swing.JPanel;
 
 class stage_chicken6 extends JPanel{
 	ImageIcon bgimage = new ImageIcon("pic/table.png");
-	ImageIcon chicken[] = {new ImageIcon("pic/shake_chicken1.png"), new ImageIcon("pic/shake_chicken2.png")};
+	ImageIcon chicken[] = {new ImageIcon("pic/shake_chicken1.png"), new ImageIcon("pic/shake_chicken1-2.png"),
+			new ImageIcon("pic/shake_chicken1-3.png"), new ImageIcon("pic/shake_chicken2.png")};
 	
 	JPanel panel;
 	
@@ -63,9 +64,15 @@ class stage_chicken6 extends JPanel{
 				
 				if(pause.work) {
 					if(endX + startX >= 400 && endY + startY >= 500) count++;
-						
-					if(count == 9) {
+
+					if(count == 3) {
 						ingre_chicken.setIcon(chicken[1]);
+					}
+					if(count == 5) {
+						ingre_chicken.setIcon(chicken[2]);
+					}
+					if(count == 9) {
+						ingre_chicken.setIcon(chicken[3]);
 						menu.stage3_score += 5;
 					}
 					else if(count == 10) {

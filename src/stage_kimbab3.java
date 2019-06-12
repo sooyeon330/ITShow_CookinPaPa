@@ -18,7 +18,8 @@ import javax.swing.JPanel;
 public class stage_kimbab3 extends JPanel{
 	ImageIcon bgimage= new ImageIcon("pic/table.png");
 	ImageIcon bowlImag[] = {new ImageIcon("pic/kimbab_bowl1.png"),new ImageIcon("pic/kimbab_bowl2.png"),
-			new ImageIcon("pic/kimbab_bowl3.png"),new ImageIcon("pic/kimbab_bowl4.png"),new ImageIcon("pic/kimbab_bowl5.png")};
+			new ImageIcon("pic/kimbab_bowl3.png"),new ImageIcon("pic/kimbab_bowl4.png"),new ImageIcon("pic/kimbab_bowl4-2.png"),
+			new ImageIcon("pic/kimbab_bowl4-3.png"),new ImageIcon("pic/kimbab_bowl5.png")};
 	ImageIcon salt = new ImageIcon("pic/salt.png");
 	ImageIcon sesameOil = new ImageIcon("pic/sesameOil.png");
 	ImageIcon sesame = new ImageIcon("pic/sesame.png");
@@ -43,11 +44,11 @@ public class stage_kimbab3 extends JPanel{
 		bowl.setSize(610, 500);
 		bowl.setBounds(210, 210, bowl.getWidth(), bowl.getHeight());		
 		
-		JLabel ingre_salt = new JLabel(salt);
-		ingre_salt.setBounds(80, 100, salt.getIconWidth(), salt.getIconHeight());
-		
 		JLabel ingre_sesame = new JLabel(sesame);
-		ingre_sesame.setBounds(815, 100, sesame.getIconWidth(), sesame.getIconHeight());
+		ingre_sesame.setBounds(80, 100, sesame.getIconWidth(), sesame.getIconHeight());
+		
+		JLabel ingre_salt = new JLabel(salt);
+		ingre_salt.setBounds(815, 100, salt.getIconWidth(), salt.getIconHeight());
 		
 		JLabel ingre_sesameOil = new JLabel(sesameOil);
 		ingre_sesameOil.setBounds(410, 60, sesameOil.getIconWidth(), sesameOil.getIconHeight());
@@ -78,27 +79,6 @@ public class stage_kimbab3 extends JPanel{
 			}
 		});
 		
-		ingre_salt.addMouseListener(new MouseAdapter() {
-			
-			@Override
-			public void mousePressed(MouseEvent e) {
-				if(pause.work) {
-				setCursor(Toolkit.getDefaultToolkit().createCustomCursor(
-						new ImageIcon("pic/salt.png").getImage(), new Point(31,31),"custom cursor"));
-				}
-			}
-			@Override
-			public void mouseReleased(MouseEvent e) {
-				if(e.getX() >= 156 && e.getX() <= 757 && e.getY() >= 141 && e.getY() <= 608 && count==1 && pause.work) {
-					menu.stage4_score += 3;
-					bowl.setIcon(bowlImag[2]);	
-					ingre_salt.setVisible(false);
-					count++;
-				}
-				setCursor(new Cursor(Cursor.DEFAULT_CURSOR)); 
-			}
-		});
-		
 		ingre_sesame.addMouseListener(new MouseAdapter() {
 			
 			@Override
@@ -110,11 +90,32 @@ public class stage_kimbab3 extends JPanel{
 			}
 			@Override
 			public void mouseReleased(MouseEvent e) {
+				if(e.getX() >= 156 && e.getX() <= 757 && e.getY() >= 141 && e.getY() <= 608 && count==1 && pause.work) {
+					menu.stage4_score += 3;
+					bowl.setIcon(bowlImag[2]);	
+					ingre_sesame.setVisible(false);
+					count++;
+				}
+				setCursor(new Cursor(Cursor.DEFAULT_CURSOR)); 
+			}
+		});
+		
+		ingre_salt.addMouseListener(new MouseAdapter() {
+			
+			@Override
+			public void mousePressed(MouseEvent e) {
+				if(pause.work) {
+				setCursor(Toolkit.getDefaultToolkit().createCustomCursor(
+						new ImageIcon("pic/salt.png").getImage(), new Point(31,31),"custom cursor"));
+				}
+			}
+			@Override
+			public void mouseReleased(MouseEvent e) {
 				if(e.getX() >= -583 && e.getX() <= 14 && e.getY() >= 139 && e.getY() <= 605 && count == 2 && pause.work) {
 					count++;
 					menu.stage4_score += 3;
 					bowl.setIcon(bowlImag[3]);
-					ingre_sesame.setVisible(false);
+					ingre_salt.setVisible(false);
 					clear = true;
 				}
 				setCursor(new Cursor(Cursor.DEFAULT_CURSOR)); 
@@ -152,8 +153,10 @@ public class stage_kimbab3 extends JPanel{
 						count2++;
 						menu.stage4_score += 3;
 					}
-						
-					if (count2 == 5) bowl.setIcon(bowlImag[4]);
+
+					if (count2 == 3) bowl.setIcon(bowlImag[4]);
+					if (count2 == 4) bowl.setIcon(bowlImag[5]);
+					if (count2 == 5) bowl.setIcon(bowlImag[6]);
 					else if(count2 > 5) {
 						Timer.complete = true;
 						frame.add(new exam_kimbab(frame));
