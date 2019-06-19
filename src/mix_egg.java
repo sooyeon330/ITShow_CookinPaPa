@@ -16,7 +16,7 @@ public class mix_egg extends JPanel{
 	ImageIcon eggimg = new ImageIcon(getClass().getClassLoader().getResource("pic/Egg.png"));
 	ImageIcon gageimg = new ImageIcon(getClass().getClassLoader().getResource("pic/gage.png"));
 	ImageIcon brokenegg = new ImageIcon(getClass().getClassLoader().getResource("pic/broken_egg.png"));
-	ImageIcon checkimg = new ImageIcon(getClass().getClassLoader().getResource("pic/check_egg.png"));
+	ImageIcon checkimg = new ImageIcon(getClass().getClassLoader().getResource("pic/check_Egg.png"));
 	ImageIcon checkbrokenimg = new ImageIcon(getClass().getClassLoader().getResource("pic/check_broken_egg.png"));
 	ImageIcon go_btnimg = new ImageIcon(getClass().getClassLoader().getResource("pic/go_btn.png"));
 	moving move = new moving(eggimg);
