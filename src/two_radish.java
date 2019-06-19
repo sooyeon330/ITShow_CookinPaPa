@@ -9,9 +9,11 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class two_radish extends JPanel{
-	ImageIcon bgimage = new ImageIcon("pic/cuttingboard2.png");
-	ImageIcon[] radish = {new ImageIcon("pic/radish1.png"),new ImageIcon("pic/radish2.png"),
-			new ImageIcon("pic/radish3.png"),new ImageIcon("pic/radish4.png")};
+	ImageIcon bgimage = new ImageIcon(getClass().getClassLoader().getResource("pic/cuttingboard2.png"));
+	ImageIcon[] radish = {new ImageIcon(getClass().getClassLoader().getResource("pic/radish1.png")),
+			new ImageIcon(getClass().getClassLoader().getResource("pic/radish2.png")),
+			new ImageIcon(getClass().getClassLoader().getResource("pic/radish3.png")),
+			new ImageIcon(getClass().getClassLoader().getResource("pic/radish4.png"))};
 	int i = 0, j = 0;
 	KeyListener kl;
 	

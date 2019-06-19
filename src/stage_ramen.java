@@ -28,20 +28,20 @@ public class stage_ramen extends JPanel{
 	int[] order= {w,s,n,g,e}; 
 	int[] useorder= new int[5];
 	
-	ImageIcon bgimage = new ImageIcon("pic/fire_range.png");
-	ImageIcon resultimg = new ImageIcon("pic/result.png");
-	ImageIcon go_btnimg = new ImageIcon("pic/go_btn.png");
-	ImageIcon explaneimg = new ImageIcon("pic/ramen_explane.png");
+	ImageIcon bgimage = new ImageIcon(getClass().getClassLoader().getResource("pic/fire_range.png"));
+	ImageIcon resultimg = new ImageIcon(getClass().getClassLoader().getResource("pic/result.png"));
+	ImageIcon go_btnimg = new ImageIcon(getClass().getClassLoader().getResource("pic/go_btn.png"));
+	ImageIcon explaneimg = new ImageIcon(getClass().getClassLoader().getResource("pic/ramen_explane.png"));
 	
-	static ImageIcon potimg = new ImageIcon("pic/pot.png");
-	ImageIcon waterimg = new ImageIcon("pic/watercup.png");
-	ImageIcon soupbaseimg = new ImageIcon("pic/soup.png");
-	ImageIcon noodleimg = new ImageIcon("pic/noodle.png");
-	ImageIcon greenOnionimg = new ImageIcon("pic/green_onion.png");
-	ImageIcon eggimg = new ImageIcon("pic/Egg.png");
-	ImageIcon btnimg = new ImageIcon("pic/range_gas.png");
-	ImageIcon btnedimg = new ImageIcon("pic/range_gas2.png");
-	 ImageIcon burnpot = new ImageIcon("pic/burnt_pot.png");
+	static ImageIcon potimg = new ImageIcon(stage_ramen.class.getClassLoader().getResource("pic/pot.png"));
+	ImageIcon waterimg = new ImageIcon(getClass().getClassLoader().getResource("pic/watercup.png"));
+	ImageIcon soupbaseimg = new ImageIcon(getClass().getClassLoader().getResource("pic/soup.png"));
+	ImageIcon noodleimg = new ImageIcon(getClass().getClassLoader().getResource("pic/noodle.png"));
+	ImageIcon greenOnionimg = new ImageIcon(getClass().getClassLoader().getResource("pic/green_onion.png"));
+	ImageIcon eggimg = new ImageIcon(getClass().getClassLoader().getResource("pic/Egg.png"));
+	ImageIcon btnimg = new ImageIcon(getClass().getClassLoader().getResource("pic/range_gas.png"));
+	ImageIcon btnedimg = new ImageIcon(getClass().getClassLoader().getResource("pic/range_gas2.png"));
+	ImageIcon burnpot = new ImageIcon(getClass().getClassLoader().getResource("pic/burn_pot.png"));
 	
 	JFrame frame;JPanel panel; 
 	static protected JButton pot= new JButton(potimg); 
@@ -72,7 +72,7 @@ public class stage_ramen extends JPanel{
 		btnevent.image_crop(gobtn);
 		add(gobtn);add(lb_explane);
 		
-		Timer timer = new Timer(15, panel, frame);
+		Timer timer = new Timer(15, panel, frame,6);
 //		Rm_Time_Limit timer = new Rm_Time_Limit(11, this, frame);
 //		new pause(panel,timer);
 		
@@ -105,7 +105,7 @@ public class stage_ramen extends JPanel{
 						@Override
 						public void mousePressed(MouseEvent e) {
 							setCursor(Toolkit.getDefaultToolkit().createCustomCursor(
-									new ImageIcon("pic/watercup.png").getImage(), new Point(31,31),"custom cursor"));
+									new ImageIcon(getClass().getClassLoader().getResource("pic/watercup.png")).getImage(), new Point(31,31),"custom cursor"));
 						}
 						@Override
 						public void mouseReleased(MouseEvent e) {
@@ -126,7 +126,7 @@ public class stage_ramen extends JPanel{
 						@Override
 						public void mousePressed(MouseEvent e) {
 							setCursor(Toolkit.getDefaultToolkit().createCustomCursor(
-									new ImageIcon("pic/soup.png").getImage(), new Point(31,31),"custom cursor"));
+									new ImageIcon(getClass().getClassLoader().getResource("pic/soup.png")).getImage(), new Point(31,31),"custom cursor"));
 						}
 						@Override
 						public void mouseReleased(MouseEvent e) {
@@ -146,7 +146,7 @@ public class stage_ramen extends JPanel{
 						@Override
 						public void mousePressed(MouseEvent e) {
 							setCursor(Toolkit.getDefaultToolkit().createCustomCursor(
-									new ImageIcon("pic/noodle.png").getImage(), new Point(31,31),"custom cursor"));
+									new ImageIcon(getClass().getClassLoader().getResource("pic/noodle.png")).getImage(), new Point(31,31),"custom cursor"));
 						}
 						@Override
 						public void mouseReleased(MouseEvent e) {
@@ -166,7 +166,7 @@ public class stage_ramen extends JPanel{
 						@Override
 						public void mousePressed(MouseEvent e) {
 							setCursor(Toolkit.getDefaultToolkit().createCustomCursor(
-									new ImageIcon("pic/green_onion.png").getImage(), new Point(31,31),"custom cursor"));
+									new ImageIcon(getClass().getClassLoader().getResource("pic/green_onion.png")).getImage(), new Point(31,31),"custom cursor"));
 						}
 						@Override
 						public void mouseReleased(MouseEvent e) {
@@ -187,7 +187,7 @@ public class stage_ramen extends JPanel{
 						@Override
 						public void mousePressed(MouseEvent e) {
 							setCursor(Toolkit.getDefaultToolkit().createCustomCursor(
-									new ImageIcon("pic/Egg.png").getImage(), new Point(31,31),"custom cursor"));
+									new ImageIcon(getClass().getClassLoader().getResource("pic/Egg.png")).getImage(), new Point(31,31),"custom cursor"));
 						}
 						@Override
 						public void mouseReleased(MouseEvent e) {

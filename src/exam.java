@@ -10,14 +10,14 @@ import javax.swing.JPanel;
 
 class exam extends JPanel{
 	ImageIcon bgimage;
-	ImageIcon bgimage1 = new ImageIcon("pic/one.png");
-	ImageIcon bgimage2 = new ImageIcon("pic/two.png");
-	ImageIcon bgimage3 = new ImageIcon("pic/three.png");
-	ImageIcon bgimage4 = new ImageIcon("pic/four.png");
-	ImageIcon bgimage5 = new ImageIcon("pic/five.png");
-	ImageIcon bgimage6 = new ImageIcon("pic/six.png");
-	ImageIcon exit = new ImageIcon("pic/go_btn.png");
-	ImageIcon enter = new ImageIcon("pic/go_btn_pressed.png");
+	ImageIcon bgimage1 = new ImageIcon(getClass().getClassLoader().getResource("pic/one.png"));
+	ImageIcon bgimage2 = new ImageIcon(getClass().getClassLoader().getResource("pic/two.png"));
+	ImageIcon bgimage3 = new ImageIcon(getClass().getClassLoader().getResource("pic/three.png"));
+	ImageIcon bgimage4 = new ImageIcon(getClass().getClassLoader().getResource("pic/four.png"));
+	ImageIcon bgimage5 = new ImageIcon(getClass().getClassLoader().getResource("pic/five.png"));
+	ImageIcon bgimage6 = new ImageIcon(getClass().getClassLoader().getResource("pic/six.png"));
+	ImageIcon exit = new ImageIcon(getClass().getClassLoader().getResource("pic/go_btn.png"));
+	ImageIcon enter = new ImageIcon(getClass().getClassLoader().getResource("pic/go_btn_pressed.png"));
 	
 	JPanel panel;
 	

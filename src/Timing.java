@@ -8,8 +8,8 @@ import javax.swing.JPanel;
 
 public class Timing extends Thread{
 
-	ImageIcon one = new ImageIcon("pic/long.png");
-	ImageIcon two = new ImageIcon("pic/choose.png");
+	ImageIcon one = new ImageIcon(getClass().getClassLoader().getResource("pic/long.png"));
+	ImageIcon two = new ImageIcon(getClass().getClassLoader().getResource("pic/choose.png"));
 	
 	JPanel panel;
 	JFrame frame;

@@ -19,9 +19,11 @@ import javax.swing.JPanel;
 class stage_chicken1 extends JPanel{
 	int i=0, count = 0;
 	int startX, startY, endX, endY;
-	ImageIcon bgimage = new ImageIcon("pic/cuttingboard.png");	
-	ImageIcon[] chicken = {new ImageIcon("pic/chicken1.png"),new ImageIcon("pic/chicken2.png"),
-		new ImageIcon("pic/chicken3.png"),new ImageIcon("pic/chicken4.png")};
+	ImageIcon bgimage = new ImageIcon(getClass().getClassLoader().getResource("pic/cuttingboard.png"));	
+	ImageIcon[] chicken = {new ImageIcon(getClass().getClassLoader().getResource("pic/chicken1.png")),
+			new ImageIcon(getClass().getClassLoader().getResource("pic/chicken2.png")),
+			new ImageIcon(getClass().getClassLoader().getResource("pic/chicken3.png")),
+			new ImageIcon(getClass().getClassLoader().getResource("pic/chicken4.png"))};
 	
 	JPanel panel;
 	

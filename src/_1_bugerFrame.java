@@ -9,20 +9,20 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class _1_bugerFrame extends JPanel{
-	static ImageIcon keyimg[] = { new ImageIcon("pic/key1.png"), // left
-			new ImageIcon("pic/key2.png"), // up
-			new ImageIcon("pic/key3.png"), //right
-			new ImageIcon("pic/key4.png")}; //down
+	static ImageIcon keyimg[] = { new ImageIcon(_1_bugerFrame.class.getClassLoader().getResource("pic/key1.png")), // left
+			new ImageIcon(_1_bugerFrame.class.getClassLoader().getResource("pic/key2.png")), // up
+			new ImageIcon(_1_bugerFrame.class.getClassLoader().getResource("pic/key3.png")), //right
+			new ImageIcon(_1_bugerFrame.class.getClassLoader().getResource("pic/key4.png"))}; //down
 
-	static ImageIcon presskeyimg[] = { new ImageIcon("pic/presskey1.png"), // left
-				new ImageIcon("pic/presskey2.png"), // up
-				new ImageIcon("pic/presskey3.png"), //right
-				new ImageIcon("pic/presskey4.png")}; //down
+	static ImageIcon presskeyimg[] = { new ImageIcon(_1_bugerFrame.class.getClassLoader().getResource("pic/presskey1.png")), // left
+				new ImageIcon(_1_bugerFrame.class.getClassLoader().getResource("pic/presskey2.png")), // up
+				new ImageIcon(_1_bugerFrame.class.getClassLoader().getResource("pic/presskey3.png")), //right
+				new ImageIcon(_1_bugerFrame.class.getClassLoader().getResource("pic/presskey4.png"))}; //down
 	//
-	static ImageIcon basebugimg = new ImageIcon("pic/hamburger1.png");
+	static ImageIcon basebugimg = new ImageIcon(_1_bugerFrame.class.getClassLoader().getResource("pic/hamburger1.png"));
 	
-	static ImageIcon successimg = new ImageIcon("pic/success.png");
-	static ImageIcon failimg = new ImageIcon("pic/fail.png");
+	static ImageIcon successimg = new ImageIcon(_1_bugerFrame.class.getClassLoader().getResource("pic/success.png"));
+	static ImageIcon failimg = new ImageIcon(_1_bugerFrame.class.getClassLoader().getResource("pic/fail.png"));
 
 	public static final int x = 35;
 	public static final int y = 620; //방향키 기본 y좌표

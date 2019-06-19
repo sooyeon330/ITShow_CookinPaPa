@@ -8,9 +8,9 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class twoExam extends JPanel{
-	ImageIcon bgimage = new ImageIcon("pic/2pExam.png");
-	ImageIcon exit = new ImageIcon("pic/go_btn.png");
-	ImageIcon enter = new ImageIcon("pic/go_btn_pressed.png");
+	ImageIcon bgimage = new ImageIcon(getClass().getClassLoader().getResource("pic/2pExam.png"));
+	ImageIcon exit = new ImageIcon(getClass().getClassLoader().getResource("pic/go_btn.png"));
+	ImageIcon enter = new ImageIcon(getClass().getClassLoader().getResource("pic/go_btn_pressed.png"));
 	JPanel panel;
 	
 	twoExam(JFrame frame, JPanel nextP){

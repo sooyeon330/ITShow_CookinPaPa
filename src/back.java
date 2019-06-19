@@ -7,8 +7,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 class back extends JLabel{
-	ImageIcon unclick = new ImageIcon("pic/back_btn_unclick.png");
-	ImageIcon click = new ImageIcon("pic/back_btn_click.png");
+	ImageIcon unclick = new ImageIcon(getClass().getClassLoader().getResource("pic/back_btn_unclick.png"));
+	ImageIcon click = new ImageIcon(getClass().getClassLoader().getResource("pic/back_btn_click.png"));
 	
 	back(JFrame frame, JPanel myPanel){
 		setLayout(null);

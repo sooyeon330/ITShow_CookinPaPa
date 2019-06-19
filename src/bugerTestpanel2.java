@@ -13,7 +13,7 @@ import javax.swing.JPanel;
 import javax.swing.event.TreeWillExpandListener;
 
 public class bugerTestpanel2 extends JPanel{	
-	ImageIcon bgimage = new ImageIcon("pic/cuttingboard4.png");
+	ImageIcon bgimage = new ImageIcon(getClass().getClassLoader().getResource("pic/cuttingboard4.png"));
 
 	int k2=0,b=0;//keyarray에 쓸 인덱스 , buger에 쓸 인덱스
 	JPanel panel;

@@ -9,13 +9,13 @@ import javax.swing.JPanel;
 
 class exam_kimbab extends JPanel{
 	ImageIcon bgimage;
-	ImageIcon bgimage1 = new ImageIcon("pic/kimbab_one.png");
-	ImageIcon bgimage2 = new ImageIcon("pic/kimbab_two.png");
-	ImageIcon bgimage3 = new ImageIcon("pic/kimbab_three.png");
-	ImageIcon bgimage4 = new ImageIcon("pic/kimbab_four.png");
-	ImageIcon bgimage5 = new ImageIcon("pic/kimbab_five.png");
-	ImageIcon exit = new ImageIcon("pic/go_btn.png");
-	ImageIcon enter = new ImageIcon("pic/go_btn_pressed.png");
+	ImageIcon bgimage1 = new ImageIcon(getClass().getClassLoader().getResource("pic/kimbab_one.png"));
+	ImageIcon bgimage2 = new ImageIcon(getClass().getClassLoader().getResource("pic/kimbab_two.png"));
+	ImageIcon bgimage3 = new ImageIcon(getClass().getClassLoader().getResource("pic/kimbab_three.png"));
+	ImageIcon bgimage4 = new ImageIcon(getClass().getClassLoader().getResource("pic/kimbab_four.png"));
+	ImageIcon bgimage5 = new ImageIcon(getClass().getClassLoader().getResource("pic/kimbab_five.png"));
+	ImageIcon exit = new ImageIcon(getClass().getClassLoader().getResource("pic/go_btn.png"));
+	ImageIcon enter = new ImageIcon(getClass().getClassLoader().getResource("pic/go_btn_pressed.png"));
 	
 	JPanel panel;
 	

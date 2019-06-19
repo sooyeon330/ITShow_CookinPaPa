@@ -10,15 +10,15 @@ import javax.swing.JPanel;
 
 
 public class mix_egg extends JPanel{
-	ImageIcon bgimg = new ImageIcon("pic/table.png");
-	ImageIcon mixball_img = new ImageIcon("pic/mixball1.png");
-	ImageIcon mixball2_img = new ImageIcon("pic/mixball2.png");
-	ImageIcon eggimg = new ImageIcon("pic/Egg.png");
-	ImageIcon gageimg = new ImageIcon("pic/gage.png");
-	ImageIcon brokenegg = new ImageIcon("pic/broken_egg.png");
-	ImageIcon checkimg = new ImageIcon("pic/check_egg.png");
-	ImageIcon checkbrokenimg = new ImageIcon("pic/check_broken_egg.png");
-	ImageIcon go_btnimg = new ImageIcon("pic/go_btn.png");
+	ImageIcon bgimg = new ImageIcon(getClass().getClassLoader().getResource("pic/table.png"));
+	ImageIcon mixball_img = new ImageIcon(getClass().getClassLoader().getResource("pic/mixball1.png"));
+	ImageIcon mixball2_img = new ImageIcon(getClass().getClassLoader().getResource("pic/mixball2.png"));
+	ImageIcon eggimg = new ImageIcon(getClass().getClassLoader().getResource("pic/Egg.png"));
+	ImageIcon gageimg = new ImageIcon(getClass().getClassLoader().getResource("pic/gage.png"));
+	ImageIcon brokenegg = new ImageIcon(getClass().getClassLoader().getResource("pic/broken_egg.png"));
+	ImageIcon checkimg = new ImageIcon(getClass().getClassLoader().getResource("pic/check_egg.png"));
+	ImageIcon checkbrokenimg = new ImageIcon(getClass().getClassLoader().getResource("pic/check_broken_egg.png"));
+	ImageIcon go_btnimg = new ImageIcon(getClass().getClassLoader().getResource("pic/go_btn.png"));
 	moving move = new moving(eggimg);
 	
 	JPanel ck_panel = new JPanel();

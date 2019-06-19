@@ -6,8 +6,8 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 public class Explane_Event {
-	 ImageIcon go_btnimg = new ImageIcon("pic/go_btn.png");
-	 ImageIcon go_btnedimg = new ImageIcon("pic/go_btn_pressed.png");
+	 ImageIcon go_btnimg = new ImageIcon(getClass().getClassLoader().getResource("pic/go_btn.png"));
+	 ImageIcon go_btnedimg = new ImageIcon(getClass().getClassLoader().getResource("pic/go_btn_pressed.png"));
 	
 
 	 void gobtn_event(Component lb_img,JButton btn) {

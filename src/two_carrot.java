@@ -9,9 +9,11 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class two_carrot extends JPanel{
-	ImageIcon bgimage = new ImageIcon("pic/cuttingboard2.png");
-	ImageIcon[] carrot = {new ImageIcon("pic/carret1.png"),new ImageIcon("pic/carret2.png"),
-			new ImageIcon("pic/carret3.png"),new ImageIcon("pic/carret4.png")};
+	ImageIcon bgimage = new ImageIcon(getClass().getClassLoader().getResource("pic/cuttingboard2.png"));
+	ImageIcon[] carrot = {new ImageIcon(getClass().getClassLoader().getResource("pic/carret1.png")),
+			new ImageIcon(getClass().getClassLoader().getResource("pic/carret2.png")),
+			new ImageIcon(getClass().getClassLoader().getResource("pic/carret3.png")),
+			new ImageIcon(getClass().getClassLoader().getResource("pic/carret4.png"))};
 	int i = 0, j = 0;
 	KeyListener kl;
 	

@@ -8,7 +8,7 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
 public class twoResult extends JPanel{
-	ImageIcon bgimage = new ImageIcon("pic/twoResult.png");
+	ImageIcon bgimage = new ImageIcon(getClass().getClassLoader().getResource("pic/twoResult.png"));
 	
 	twoResult(JFrame frame, int score1, int score2){
 		setLayout(null);

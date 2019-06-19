@@ -74,6 +74,7 @@ public class Timer extends Thread{
 				else if(num == 3) frame.add(new result(frame, menu.stage4_score,4));
 				else if(num == 4) frame.add(new exam(frame));
 				else if(num == 5) frame.add(new exam_kimbab(frame));
+				else if(num == 6) frame.add(new result(frame, menu.stage1_score,1));
 
 				num = 0;
 				frame.removeKeyListener(k1);

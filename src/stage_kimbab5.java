@@ -9,9 +9,11 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class stage_kimbab5 extends JPanel{
-	ImageIcon bgimage= new ImageIcon("pic/kimbab_table2.png");
-	ImageIcon kimbabImg[] = {new ImageIcon("pic/kimbab_before.png"),new ImageIcon("pic/kimbab_before2.png"),
-			new ImageIcon("pic/kimbab_after1.png"),new ImageIcon("pic/kimbab_after2.png")};
+	ImageIcon bgimage= new ImageIcon(getClass().getClassLoader().getResource("pic/kimbab_table2.png"));
+	ImageIcon kimbabImg[] = {new ImageIcon(getClass().getClassLoader().getResource("pic/kimbab_before.png")),
+			new ImageIcon(getClass().getClassLoader().getResource("pic/kimbab_before2.png")),
+			new ImageIcon(getClass().getClassLoader().getResource("pic/kimbab_after1.png")),
+			new ImageIcon(getClass().getClassLoader().getResource("pic/kimbab_after2.png"))};
 	JPanel panel;
 	int success_count = 0;
 	int count = 0;

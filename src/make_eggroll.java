@@ -23,13 +23,16 @@ public class make_eggroll extends JPanel {
 	
 	static int flag=1;
 	
-	ImageIcon bgimage = new ImageIcon("pic/fire_range.png");
-	ImageIcon resultimg = new ImageIcon("pic/result.png");
-	ImageIcon[] panimg = {new ImageIcon("pic/pan1.png"),new ImageIcon("pic/pan2.png"),new ImageIcon("pic/pan3.png"),new ImageIcon("pic/pan4.png"),};
-	ImageIcon clickimg = new ImageIcon("pic/btnclick.png");
-	ImageIcon clickimg2 = new ImageIcon("pic/btnclick2.png");
-	ImageIcon btnimg = new ImageIcon("pic/range_gas.png");
-	ImageIcon btnedimg = new ImageIcon("pic/range_gas2.png");
+	ImageIcon bgimage = new ImageIcon(getClass().getClassLoader().getResource("pic/fire_range.png"));
+	ImageIcon resultimg = new ImageIcon(getClass().getClassLoader().getResource("pic/result.png"));
+	ImageIcon[] panimg = {new ImageIcon(getClass().getClassLoader().getResource("pic/pan1.png")),
+			new ImageIcon(getClass().getClassLoader().getResource("pic/pan2.png")),
+			new ImageIcon(getClass().getClassLoader().getResource("pic/pan3.png")),
+			new ImageIcon(getClass().getClassLoader().getResource("pic/pan4.png")),};
+	ImageIcon clickimg = new ImageIcon(getClass().getClassLoader().getResource("pic/btnclick.png"));
+	ImageIcon clickimg2 = new ImageIcon(getClass().getClassLoader().getResource("pic/btnclick2.png"));
+	ImageIcon btnimg = new ImageIcon(getClass().getClassLoader().getResource("pic/range_gas.png"));
+	ImageIcon btnedimg = new ImageIcon(getClass().getClassLoader().getResource("pic/range_gas2.png"));
 	
 	JFrame frame;
 	
@@ -78,7 +81,7 @@ public class make_eggroll extends JPanel {
 						@Override
 						public void mouseEntered(MouseEvent e) {
 							setCursor(Toolkit.getDefaultToolkit().createCustomCursor(
-									new ImageIcon("pic/click_cursor.png").getImage(), new Point(31,31),"custom cursor"));
+									new ImageIcon(getClass().getClassLoader().getResource("pic/click_cursor.png")).getImage(), new Point(31,31),"custom cursor"));
 						}
 						@Override
 						public void mouseClicked(MouseEvent e) {

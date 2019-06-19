@@ -22,15 +22,24 @@ public class stage_eggroll extends JPanel{
 
 	int i=0,j=0;
 	int count=3;
-	ImageIcon bgimage = new ImageIcon("pic/cuttingboard.png");
-	ImageIcon resultimg = new ImageIcon("pic/result.png");
-	ImageIcon explaneimg = new ImageIcon("pic/eggroll_explane.png");
-	ImageIcon[] ingrediantimg = {new ImageIcon("pic/onion1.png"),new ImageIcon("pic/onion2.png"),new ImageIcon("pic/onion3.png"),new ImageIcon("pic/onion4.png"),
-							  new ImageIcon("pic/papprica1.png"),new ImageIcon("pic/papprica2.png"),new ImageIcon("pic/papprica3.png"),new ImageIcon("pic/papprica4.png"),
-							  new ImageIcon("pic/carret1.png"),new ImageIcon("pic/carret2.png"),new ImageIcon("pic/carret3.png"),new ImageIcon("pic/carret4.png")};		
-	ImageIcon go_btnimg = new ImageIcon("pic/go_btn.png");
-	ImageIcon heartimg = new ImageIcon("pic/heart.png");
-	ImageIcon broken_heartimg = new ImageIcon("pic/broken_heart.png");
+	ImageIcon bgimage = new ImageIcon(getClass().getClassLoader().getResource("pic/cuttingboard.png"));
+	ImageIcon resultimg = new ImageIcon(getClass().getClassLoader().getResource("pic/result.png"));
+	ImageIcon explaneimg = new ImageIcon(getClass().getClassLoader().getResource("pic/eggroll_explane.png"));
+	ImageIcon[] ingrediantimg = {new ImageIcon(getClass().getClassLoader().getResource("pic/onion1.png")),
+							  new ImageIcon(getClass().getClassLoader().getResource("pic/onion2.png")),
+							  new ImageIcon(getClass().getClassLoader().getResource("pic/onion3.png")),
+							  new ImageIcon(getClass().getClassLoader().getResource("pic/onion4.png")),
+							  new ImageIcon(getClass().getClassLoader().getResource("pic/papprica1.png")),
+							  new ImageIcon(getClass().getClassLoader().getResource("pic/papprica2.png")),
+							  new ImageIcon(getClass().getClassLoader().getResource("pic/papprica3.png")),
+							  new ImageIcon(getClass().getClassLoader().getResource("pic/papprica4.png")),
+							  new ImageIcon(getClass().getClassLoader().getResource("pic/carret1.png")),
+							  new ImageIcon(getClass().getClassLoader().getResource("pic/carret2.png")),
+							  new ImageIcon(getClass().getClassLoader().getResource("pic/carret3.png")),
+							  new ImageIcon(getClass().getClassLoader().getResource("pic/carret4.png"))};		
+	ImageIcon go_btnimg = new ImageIcon(getClass().getClassLoader().getResource("pic/go_btn.png"));
+	ImageIcon heartimg = new ImageIcon(getClass().getClassLoader().getResource("pic/heart.png"));
+	ImageIcon broken_heartimg = new ImageIcon(getClass().getClassLoader().getResource("pic/broken_heart.png"));
 	
 	JLabel[] heart = {new JLabel(heartimg),new JLabel(heartimg),new JLabel(heartimg)};
 	
@@ -94,7 +103,7 @@ public class stage_eggroll extends JPanel{
 			
 	  void ingrediant_crop(JLabel lb,ImageIcon[] img) { 
 		setCursor(Toolkit.getDefaultToolkit().createCustomCursor(
-				new ImageIcon("pic/knife.png").getImage(), new Point(31,31),"custom cursor"));
+				new ImageIcon(getClass().getClassLoader().getResource("pic/knife.png")).getImage(), new Point(31,31),"custom cursor"));
 		setbounds_img(lb); add(lb);
 
 		Brush b = new Brush();

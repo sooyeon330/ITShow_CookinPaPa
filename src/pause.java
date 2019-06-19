@@ -8,9 +8,9 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class pause extends JLabel{
-	ImageIcon pBtn = new ImageIcon("pic/pause_btn_unclick.png");
-	ImageIcon pBtn2 = new ImageIcon("pic/pause_btn_click.png");
-	ImageIcon pScreen = new ImageIcon("pic/pause_screen.png");
+	ImageIcon pBtn = new ImageIcon(getClass().getClassLoader().getResource("pic/pause_btn_unclick.png"));
+	ImageIcon pBtn2 = new ImageIcon(getClass().getClassLoader().getResource("pic/pause_btn_click.png"));
+	ImageIcon pScreen = new ImageIcon(getClass().getClassLoader().getResource("pic/pause_screen.png"));
 	
 	static boolean work = true;
 	

@@ -13,12 +13,14 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 class stage_chicken2 extends JPanel{
-	ImageIcon bgimage= new ImageIcon("pic/table.png");
-	ImageIcon chicken[] = {new ImageIcon("pic/contain_chicken1.png"),new ImageIcon("pic/contain_chicken2.png"),
-			new ImageIcon("pic/contain_chicken3.png"),new ImageIcon("pic/contain_chicken4.png")};
-	ImageIcon salt = new ImageIcon("pic/salt.png");
-	ImageIcon pepper = new ImageIcon("pic/pepper.png");
-	ImageIcon garlic = new ImageIcon("pic/garlic.png");
+	ImageIcon bgimage= new ImageIcon(getClass().getClassLoader().getResource("pic/table.png"));
+	ImageIcon chicken[] = {new ImageIcon(getClass().getClassLoader().getResource("pic/contain_chicken1.png")),
+			new ImageIcon(getClass().getClassLoader().getResource("pic/contain_chicken2.png")),
+			new ImageIcon(getClass().getClassLoader().getResource("pic/contain_chicken3.png")),
+			new ImageIcon(getClass().getClassLoader().getResource("pic/contain_chicken4.png"))};
+	ImageIcon salt = new ImageIcon(getClass().getClassLoader().getResource("pic/salt.png"));
+	ImageIcon pepper = new ImageIcon(getClass().getClassLoader().getResource("pic/pepper.png"));
+	ImageIcon garlic = new ImageIcon(getClass().getClassLoader().getResource("pic/garlic.png"));
 	
 	JPanel panel; 
 
@@ -61,7 +63,7 @@ class stage_chicken2 extends JPanel{
 			public void mousePressed(MouseEvent e) {
 				if(pause.work) {
 				setCursor(Toolkit.getDefaultToolkit().createCustomCursor(
-						new ImageIcon("pic/garlic.png").getImage(), new Point(31,31),"custom cursor"));
+						new ImageIcon(getClass().getClassLoader().getResource("pic/garlic.png")).getImage(), new Point(31,31),"custom cursor"));
 				}
 			}
 			@Override
@@ -83,7 +85,7 @@ class stage_chicken2 extends JPanel{
 			public void mousePressed(MouseEvent e) {
 				if(pause.work) {
 				setCursor(Toolkit.getDefaultToolkit().createCustomCursor(
-						new ImageIcon("pic/salt.png").getImage(), new Point(31,31),"custom cursor"));
+						new ImageIcon(getClass().getClassLoader().getResource("pic/salt.png")).getImage(), new Point(31,31),"custom cursor"));
 				}
 			}
 			@Override
@@ -104,7 +106,7 @@ class stage_chicken2 extends JPanel{
 			public void mousePressed(MouseEvent e) {
 				if(pause.work) {
 				setCursor(Toolkit.getDefaultToolkit().createCustomCursor(
-						new ImageIcon("pic/pepper.png").getImage(), new Point(31,31),"custom cursor"));
+						new ImageIcon(getClass().getClassLoader().getResource("pic/pepper.png")).getImage(), new Point(31,31),"custom cursor"));
 				}
 			}
 			@Override

@@ -11,9 +11,12 @@ import javax.swing.JPanel;
 
 class stage_chicken4 extends JPanel{
 	
-	ImageIcon bgimage = new ImageIcon("pic/flour.png");
-	ImageIcon chicken[] = {new ImageIcon("pic/rolling_chicken1.png"), new ImageIcon("pic/rolling_chicken2.png"),new ImageIcon("pic/rolling_chicken3.png"),
-						new ImageIcon("pic/rolling_chicken4.png"),new ImageIcon("pic/rolling_chicken5.png")};
+	ImageIcon bgimage = new ImageIcon(getClass().getClassLoader().getResource("pic/flour.png"));
+	ImageIcon chicken[] = {new ImageIcon(getClass().getClassLoader().getResource("pic/rolling_chicken1.png")), 
+			new ImageIcon(getClass().getClassLoader().getResource("pic/rolling_chicken2.png")),
+			new ImageIcon(getClass().getClassLoader().getResource("pic/rolling_chicken3.png")),
+			new ImageIcon(getClass().getClassLoader().getResource("pic/rolling_chicken4.png")),
+			new ImageIcon(getClass().getClassLoader().getResource("pic/rolling_chicken5.png"))};
 	private int x = 260;
 	private int y = 270;
 	

@@ -14,13 +14,17 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 class stage_chicken3 extends JPanel{
-	ImageIcon bgimage = new ImageIcon("pic/table.png");
-	ImageIcon[] sauce = {new ImageIcon("pic/sauce1.png"),new ImageIcon("pic/sauce2.png"), new ImageIcon("pic/sauce3.png"),
-							new ImageIcon("pic/sauce4.png"),new ImageIcon("pic/sauce5.png"), new ImageIcon("pic/sauce6.png")};
-	ImageIcon ketchup = new ImageIcon("pic/ketchup.png");
-	ImageIcon kochujang = new ImageIcon("pic/kochujang.png");
-	ImageIcon water = new ImageIcon("pic/water.png");
-	ImageIcon soy_sauce = new ImageIcon("pic/soy_sauce.png");
+	ImageIcon bgimage = new ImageIcon(getClass().getClassLoader().getResource("pic/table.png"));
+	ImageIcon[] sauce = {new ImageIcon(getClass().getClassLoader().getResource("pic/sauce1.png")),
+			new ImageIcon(getClass().getClassLoader().getResource("pic/sauce2.png")), 
+			new ImageIcon(getClass().getClassLoader().getResource("pic/sauce3.png")),
+			new ImageIcon(getClass().getClassLoader().getResource("pic/sauce4.png")),
+			new ImageIcon(getClass().getClassLoader().getResource("pic/sauce5.png")), 
+			new ImageIcon(getClass().getClassLoader().getResource("pic/sauce6.png"))};
+	ImageIcon ketchup = new ImageIcon(getClass().getClassLoader().getResource("pic/ketchup.png"));
+	ImageIcon kochujang = new ImageIcon(getClass().getClassLoader().getResource("pic/kochujang.png"));
+	ImageIcon water = new ImageIcon(getClass().getClassLoader().getResource("pic/water.png"));
+	ImageIcon soy_sauce = new ImageIcon(getClass().getClassLoader().getResource("pic/soy_sauce.png"));
 	 
 	JPanel panel;
 	
@@ -67,7 +71,7 @@ class stage_chicken3 extends JPanel{
 			public void mousePressed(MouseEvent e) {
 				if(pause.work) {
 				setCursor(Toolkit.getDefaultToolkit().createCustomCursor(
-						new ImageIcon("pic/water.png").getImage(), new Point(31,31),"custom cursor"));
+						new ImageIcon(getClass().getClassLoader().getResource("pic/water.png")).getImage(), new Point(31,31),"custom cursor"));
 				}
 			}
 			@Override
@@ -88,7 +92,7 @@ class stage_chicken3 extends JPanel{
 			public void mousePressed(MouseEvent e) {
 				if(pause.work) {
 				setCursor(Toolkit.getDefaultToolkit().createCustomCursor(
-						new ImageIcon("pic/soy_sauce.png").getImage(), new Point(31,31),"custom cursor"));
+						new ImageIcon(getClass().getClassLoader().getResource("pic/soy_sauce.png")).getImage(), new Point(31,31),"custom cursor"));
 				}
 			}
 			@Override
@@ -109,7 +113,7 @@ class stage_chicken3 extends JPanel{
 			public void mousePressed(MouseEvent e) {
 				if(pause.work) {
 				setCursor(Toolkit.getDefaultToolkit().createCustomCursor(
-						new ImageIcon("pic/ketchup.png").getImage(), new Point(31,31),"custom cursor"));
+						new ImageIcon(getClass().getClassLoader().getResource("pic/ketchup.png")).getImage(), new Point(31,31),"custom cursor"));
 				}
 			}
 			@Override
@@ -130,7 +134,7 @@ class stage_chicken3 extends JPanel{
 			public void mousePressed(MouseEvent e) {
 				if(pause.work) {
 				setCursor(Toolkit.getDefaultToolkit().createCustomCursor(
-						new ImageIcon("pic/kochujang.png").getImage(), new Point(31,31),"custom cursor"));
+						new ImageIcon(getClass().getClassLoader().getResource("pic/kochujang.png")).getImage(), new Point(31,31),"custom cursor"));
 				}
 			}
 			@Override

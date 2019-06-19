@@ -10,12 +10,13 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class tutorial1 extends JPanel{
-	ImageIcon bgimage = new ImageIcon("pic/cuttingboard.png");
-	ImageIcon ingre_c[] = {new ImageIcon("pic/carret1.png"), new ImageIcon("pic/carret2.png")};
-	ImageIcon exam1 = new ImageIcon("pic/exam1.png");
-	ImageIcon exam2 = new ImageIcon("pic/exam1-2.png");
-	ImageIcon exit = new ImageIcon("pic/go_btn.png");
-	ImageIcon enter = new ImageIcon("pic/go_btn_pressed.png");
+	ImageIcon bgimage = new ImageIcon(getClass().getClassLoader().getResource("pic/cuttingboard.png"));
+	ImageIcon ingre_c[] = {new ImageIcon(getClass().getClassLoader().getResource("pic/carret1.png")), 
+			new ImageIcon(getClass().getClassLoader().getResource("pic/carret2.png"))};
+	ImageIcon exam1 = new ImageIcon(getClass().getClassLoader().getResource("pic/exam1.png"));
+	ImageIcon exam2 = new ImageIcon(getClass().getClassLoader().getResource("pic/exam1-2.png"));
+	ImageIcon exit = new ImageIcon(getClass().getClassLoader().getResource("pic/go_btn.png"));
+	ImageIcon enter = new ImageIcon(getClass().getClassLoader().getResource("pic/go_btn_pressed.png"));
 	
 	JPanel panel;
 	

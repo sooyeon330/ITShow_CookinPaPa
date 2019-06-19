@@ -15,11 +15,12 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 class stage_chicken5 extends JPanel{
-	ImageIcon bgimage = new ImageIcon("pic/fry.png");
-	ImageIcon rawChicken = new ImageIcon("pic/raw_chicken.png");
-	ImageIcon fryChicken = new ImageIcon("pic/fry_chicken.png");
-	ImageIcon failChicken = new ImageIcon("pic/fry_chicken_fail.png");
-	ImageIcon change[] = {new ImageIcon("pic/range_gas.png"), new ImageIcon("pic/range_gas2.png")};
+	ImageIcon bgimage = new ImageIcon(getClass().getClassLoader().getResource("pic/fry.png"));
+	ImageIcon rawChicken = new ImageIcon(getClass().getClassLoader().getResource("pic/raw_chicken.png"));
+	ImageIcon fryChicken = new ImageIcon(getClass().getClassLoader().getResource("pic/fry_chicken.png"));
+	ImageIcon failChicken = new ImageIcon(getClass().getClassLoader().getResource("pic/fry_chicken_fail.png"));
+	ImageIcon change[] = {new ImageIcon(getClass().getClassLoader().getResource("pic/range_gas.png")), 
+			new ImageIcon(getClass().getClassLoader().getResource("pic/range_gas2.png"))};
 	
 	JPanel panel;
 	
@@ -123,7 +124,7 @@ class stage_chicken5 extends JPanel{
 			public void mousePressed(MouseEvent e) {
 				if(pause.work) {
 				setCursor(Toolkit.getDefaultToolkit().createCustomCursor(
-						new ImageIcon("pic/raw_chicken.png").getImage(), new Point(31,31),"custom cursor"));
+						new ImageIcon(getClass().getClassLoader().getResource("pic/raw_chicken.png")).getImage(), new Point(31,31),"custom cursor"));
 				}
 			}
 			@Override
@@ -144,7 +145,7 @@ class stage_chicken5 extends JPanel{
 			public void mousePressed(MouseEvent e) {
 				if(pause.work) {
 				setCursor(Toolkit.getDefaultToolkit().createCustomCursor(
-						new ImageIcon("pic/raw_chicken.png").getImage(), new Point(31,31),"custom cursor"));
+						new ImageIcon(getClass().getClassLoader().getResource("pic/raw_chicken.png")).getImage(), new Point(31,31),"custom cursor"));
 				}
 			}
 			@Override
@@ -165,7 +166,7 @@ class stage_chicken5 extends JPanel{
 			public void mousePressed(MouseEvent e) {
 				if(pause.work) {
 				setCursor(Toolkit.getDefaultToolkit().createCustomCursor(
-						new ImageIcon("pic/raw_chicken.png").getImage(), new Point(31,31),"custom cursor"));
+						new ImageIcon(getClass().getClassLoader().getResource("pic/raw_chicken.png")).getImage(), new Point(31,31),"custom cursor"));
 				}
 			}
 			@Override
@@ -186,7 +187,7 @@ class stage_chicken5 extends JPanel{
 			public void mousePressed(MouseEvent e) {
 				if(pause.work) {
 				setCursor(Toolkit.getDefaultToolkit().createCustomCursor(
-						new ImageIcon("pic/raw_chicken.png").getImage(), new Point(31,31),"custom cursor"));
+						new ImageIcon(getClass().getClassLoader().getResource("pic/raw_chicken.png")).getImage(), new Point(31,31),"custom cursor"));
 				}
 			}
 			@Override
@@ -207,7 +208,7 @@ class stage_chicken5 extends JPanel{
 			public void mousePressed(MouseEvent e) {
 				if(pause.work) {
 				setCursor(Toolkit.getDefaultToolkit().createCustomCursor(
-						new ImageIcon("pic/raw_chicken.png").getImage(), new Point(31,31),"custom cursor"));
+						new ImageIcon(getClass().getClassLoader().getResource("pic/raw_chicken.png")).getImage(), new Point(31,31),"custom cursor"));
 				}
 			}
 			@Override
@@ -228,7 +229,7 @@ class stage_chicken5 extends JPanel{
 			public void mousePressed(MouseEvent e) {
 				if(pause.work) {
 				setCursor(Toolkit.getDefaultToolkit().createCustomCursor(
-						new ImageIcon("pic/raw_chicken.png").getImage(), new Point(31,31),"custom cursor"));
+						new ImageIcon(getClass().getClassLoader().getResource("pic/raw_chicken.png")).getImage(), new Point(31,31),"custom cursor"));
 				}
 			}
 			@Override

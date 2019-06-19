@@ -9,12 +9,27 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class stage_kimbab1 extends JPanel{
-	ImageIcon bgimage = new ImageIcon("pic/cuttingboard.png");
-	ImageIcon[] ingre_img = {new ImageIcon("pic/kimbab_egg1.png"),new ImageIcon("pic/kimbab_egg2.png"),new ImageIcon("pic/kimbab_egg3.png"),new ImageIcon("pic/kimbab_egg4.png"),
-			new ImageIcon("pic/kimbab_radish1.png"),new ImageIcon("pic/kimbab_radish2.png"),new ImageIcon("pic/kimbab_radish3.png"),new ImageIcon("pic/kimbab_radish4.png"),
-			new ImageIcon("pic/kimbab_ham1.png"),new ImageIcon("pic/kimbab_ham2.png"),new ImageIcon("pic/kimbab_ham3.png"),new ImageIcon("pic/kimbab_ham4.png"),
-			new ImageIcon("pic/kimbab_carrot1.png"),new ImageIcon("pic/kimbab_carrot2.png"),new ImageIcon("pic/kimbab_carrot3.png"),new ImageIcon("pic/kimbab_carrot4.png"),
-			new ImageIcon("pic/kimbab_spinach1.png"),new ImageIcon("pic/kimbab_spinach2.png"),new ImageIcon("pic/kimbab_spinach3.png"),new ImageIcon("pic/kimbab_spinach4.png")};
+	ImageIcon bgimage = new ImageIcon(getClass().getClassLoader().getResource("pic/cuttingboard.png"));
+	ImageIcon[] ingre_img = {new ImageIcon(getClass().getClassLoader().getResource("pic/kimbab_egg1.png")),
+			new ImageIcon(getClass().getClassLoader().getResource("pic/kimbab_egg2.png")),
+			new ImageIcon(getClass().getClassLoader().getResource("pic/kimbab_egg3.png")),
+			new ImageIcon(getClass().getClassLoader().getResource("pic/kimbab_egg4.png")),
+			new ImageIcon(getClass().getClassLoader().getResource("pic/kimbab_radish1.png")),
+			new ImageIcon(getClass().getClassLoader().getResource("pic/kimbab_radish2.png")),
+			new ImageIcon(getClass().getClassLoader().getResource("pic/kimbab_radish3.png")),
+			new ImageIcon(getClass().getClassLoader().getResource("pic/kimbab_radish4.png")),
+			new ImageIcon(getClass().getClassLoader().getResource("pic/kimbab_ham1.png")),
+			new ImageIcon(getClass().getClassLoader().getResource("pic/kimbab_ham2.png")),
+			new ImageIcon(getClass().getClassLoader().getResource("pic/kimbab_ham3.png")),
+			new ImageIcon(getClass().getClassLoader().getResource("pic/kimbab_ham4.png")),
+			new ImageIcon(getClass().getClassLoader().getResource("pic/kimbab_carrot1.png")),
+			new ImageIcon(getClass().getClassLoader().getResource("pic/kimbab_carrot2.png")),
+			new ImageIcon(getClass().getClassLoader().getResource("pic/kimbab_carrot3.png")),
+			new ImageIcon(getClass().getClassLoader().getResource("pic/kimbab_carrot4.png")),
+			new ImageIcon(getClass().getClassLoader().getResource("pic/kimbab_spinach1.png")),
+			new ImageIcon(getClass().getClassLoader().getResource("pic/kimbab_spinach2.png")),
+			new ImageIcon(getClass().getClassLoader().getResource("pic/kimbab_spinach3.png")),
+			new ImageIcon(getClass().getClassLoader().getResource("pic/kimbab_spinach4.png"))};
 	JPanel panel;
 	int click_count;
 	

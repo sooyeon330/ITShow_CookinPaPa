@@ -7,6 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.net.URL;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -16,13 +17,13 @@ import javax.swing.SwingUtilities;
 
 class TitlePanel extends JPanel{
 	JButton button1,button2;
-	ImageIcon bgimage = new ImageIcon("pic/title.png");
-	ImageIcon start = new ImageIcon("pic/start_btn_unclick.png");
-	ImageIcon start_press = new ImageIcon("pic/start_btn_click.png");
-	ImageIcon rank = new ImageIcon("pic/ranklist_btn_unclick.png");
-	ImageIcon rank_press = new ImageIcon("pic/ranklist_btn_click.png");
-	ImageIcon two = new ImageIcon("pic/2p_btn_unclick.png");
-	ImageIcon two_press = new ImageIcon("pic/2p_btn_click.png");
+	ImageIcon bgimage = new ImageIcon(getClass().getClassLoader().getResource("pic/title.png"));
+	ImageIcon start = new ImageIcon(getClass().getClassLoader().getResource("pic/start_btn_unclick.png"));
+	ImageIcon start_press = new ImageIcon(getClass().getClassLoader().getResource("pic/start_btn_click.png"));
+	ImageIcon rank = new ImageIcon(getClass().getClassLoader().getResource("pic/ranklist_btn_unclick.png"));
+	ImageIcon rank_press = new ImageIcon(getClass().getClassLoader().getResource("pic/ranklist_btn_click.png"));
+	ImageIcon two = new ImageIcon(getClass().getClassLoader().getResource("pic/2p_btn_unclick.png"));
+	ImageIcon two_press = new ImageIcon(getClass().getClassLoader().getResource("pic/2p_btn_click.png"));
 	
 	JPanel panel;
 	

@@ -11,13 +11,13 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 class menu extends JPanel{
-	ImageIcon bgimage = new ImageIcon("pic/menu.png");
-	ImageIcon ramenimg = new ImageIcon("pic/Ramen.png");
-	ImageIcon eggrollimg = new ImageIcon("pic/EggRoll.png");
-	ImageIcon chikenimg = new ImageIcon("pic/Chiken.png");
-	ImageIcon kimbabimg = new ImageIcon("pic/Kimbab.png");
-	ImageIcon tutorial = new ImageIcon("pic/tutorial_btn_unclick.png");
-	ImageIcon tutorial_press = new ImageIcon("pic/tutorial_btn_click.png");
+	ImageIcon bgimage = new ImageIcon(getClass().getClassLoader().getResource("pic/menu.png"));
+	ImageIcon ramenimg = new ImageIcon(getClass().getClassLoader().getResource("pic/Ramen.png"));
+	ImageIcon eggrollimg = new ImageIcon(getClass().getClassLoader().getResource("pic/EggRoll.png"));
+	ImageIcon chikenimg = new ImageIcon(getClass().getClassLoader().getResource("pic/Chiken.png"));
+	ImageIcon kimbabimg = new ImageIcon(getClass().getClassLoader().getResource("pic/kimbab.png"));
+	ImageIcon tutorial = new ImageIcon(getClass().getClassLoader().getResource("pic/tutorial_btn_unclick.png"));
+	ImageIcon tutorial_press = new ImageIcon(getClass().getClassLoader().getResource("pic/tutorial_btn_click.png"));
 	
 	JPanel panel;
 	static int stage1_score = 0;

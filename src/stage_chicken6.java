@@ -10,9 +10,11 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 class stage_chicken6 extends JPanel{
-	ImageIcon bgimage = new ImageIcon("pic/table.png");
-	ImageIcon chicken[] = {new ImageIcon("pic/shake_chicken1.png"), new ImageIcon("pic/shake_chicken1-2.png"),
-			new ImageIcon("pic/shake_chicken1-3.png"), new ImageIcon("pic/shake_chicken2.png")};
+	ImageIcon bgimage = new ImageIcon(getClass().getClassLoader().getResource("pic/table.png"));
+	ImageIcon chicken[] = {new ImageIcon(getClass().getClassLoader().getResource("pic/shake_chicken1.png")), 
+			new ImageIcon(getClass().getClassLoader().getResource("pic/shake_chicken1-2.png")),
+			new ImageIcon(getClass().getClassLoader().getResource("pic/shake_chicken1-3.png")), 
+			new ImageIcon(getClass().getClassLoader().getResource("pic/shake_chicken2.png"))};
 	
 	JPanel panel;
 	

@@ -13,23 +13,23 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class stage_kimbab2 extends JPanel{
-	ImageIcon bgimage = new ImageIcon("pic/fire_range.png");
+	ImageIcon bgimage = new ImageIcon(getClass().getClassLoader().getResource("pic/fire_range.png"));
 	
-	ImageIcon panimg = new ImageIcon("pic/ori_fan.png");
+	ImageIcon panimg = new ImageIcon(getClass().getClassLoader().getResource("pic/ori_fan.png"));
 	
-	ImageIcon[] ingreimg = {new ImageIcon("pic/kimbab_ham_before.png"),
-			new ImageIcon("pic/kimbab_carrot_before.png"),
-			new ImageIcon("pic/kimbab_spinach_before.png")};
+	ImageIcon[] ingreimg = {new ImageIcon(getClass().getClassLoader().getResource("pic/kimbab_ham_before.png")),
+			new ImageIcon(getClass().getClassLoader().getResource("pic/kimbab_carrot_before.png")),
+			new ImageIcon(getClass().getClassLoader().getResource("pic/kimbab_spinach_before.png"))};
 	
-	ImageIcon keyimg[] = { new ImageIcon("pic/key1.png"), // left
-			new ImageIcon("pic/key2.png"), // up
-			new ImageIcon("pic/key3.png"), //right
-			new ImageIcon("pic/key4.png")}; //down
+	ImageIcon keyimg[] = { new ImageIcon(getClass().getClassLoader().getResource("pic/key1.png")), // left
+			new ImageIcon(getClass().getClassLoader().getResource("pic/key2.png")), // up
+			new ImageIcon(getClass().getClassLoader().getResource("pic/key3.png")), //right
+			new ImageIcon(getClass().getClassLoader().getResource("pic/key4.png"))}; //down
 
-	ImageIcon presskeyimg[] = { new ImageIcon("pic/presskey1.png"), // left
-			new ImageIcon("pic/presskey2.png"), // up
-			new ImageIcon("pic/presskey3.png"), //right
-			new ImageIcon("pic/presskey4.png")}; //down
+	ImageIcon presskeyimg[] = { new ImageIcon(getClass().getClassLoader().getResource("pic/presskey1.png")), // left
+			new ImageIcon(getClass().getClassLoader().getResource("pic/presskey2.png")), // up
+			new ImageIcon(getClass().getClassLoader().getResource("pic/presskey3.png")), //right
+			new ImageIcon(getClass().getClassLoader().getResource("pic/presskey4.png"))}; //down
 	
 	JPanel panel;	
 	

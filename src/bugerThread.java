@@ -6,12 +6,12 @@ import javax.swing.JPanel;
 
 public class bugerThread extends Thread{
 	
-	ImageIcon buger1img = new ImageIcon("pic/hamburger1.png");
-	ImageIcon buger2img = new ImageIcon("pic/hamburger2.png");
-	ImageIcon buger3img = new ImageIcon("pic/hamburger3.png");
-	ImageIcon buger4img = new ImageIcon("pic/hamburger4.png");
-	ImageIcon buger5img = new ImageIcon("pic/hamburger5.png");
-	ImageIcon buger7img = new ImageIcon("pic/hamburger7.png");
+	ImageIcon buger1img = new ImageIcon(getClass().getClassLoader().getResource("pic/hamburger1.png"));
+	ImageIcon buger2img = new ImageIcon(getClass().getClassLoader().getResource("pic/hamburger2.png"));
+	ImageIcon buger3img = new ImageIcon(getClass().getClassLoader().getResource("pic/hamburger3.png"));
+	ImageIcon buger4img = new ImageIcon(getClass().getClassLoader().getResource("pic/hamburger4.png"));
+	ImageIcon buger5img = new ImageIcon(getClass().getClassLoader().getResource("pic/hamburger5.png"));
+	ImageIcon buger7img = new ImageIcon(getClass().getClassLoader().getResource("pic/hamburger7.png"));
 	
 	int idx=0;
 	String imgname="";

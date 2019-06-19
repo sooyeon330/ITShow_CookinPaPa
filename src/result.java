@@ -10,9 +10,9 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class result extends JPanel{
-	ImageIcon bgimage = new ImageIcon("pic/result.png");
-	ImageIcon btn_unclickimg = new ImageIcon("pic/ranking_btn_unclick.png");
-	ImageIcon btn_clickimg = new ImageIcon("pic/ranking_btn_click.png");
+	ImageIcon bgimage = new ImageIcon(getClass().getClassLoader().getResource("pic/result.png"));
+	ImageIcon btn_unclickimg = new ImageIcon(getClass().getClassLoader().getResource("pic/ranking_btn_unclick.png"));
+	ImageIcon btn_clickimg = new ImageIcon(getClass().getClassLoader().getResource("pic/ranking_btn_click.png"));
 	
 	result(JFrame frame, int score,int stage_num){
 		setLayout(null);

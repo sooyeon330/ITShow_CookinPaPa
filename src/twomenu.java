@@ -9,10 +9,10 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 class twomenu extends JPanel{
-	ImageIcon bgimage = new ImageIcon("pic/menu.png");
-	ImageIcon carrotimg = new ImageIcon("pic/menu_carrot.png");
-	ImageIcon radishimg = new ImageIcon("pic/menu_radish.png");
-	ImageIcon bugerimg = new ImageIcon("pic/menu_hambuger.png");
+	ImageIcon bgimage = new ImageIcon(getClass().getClassLoader().getResource("pic/menu.png"));
+	ImageIcon carrotimg = new ImageIcon(getClass().getClassLoader().getResource("pic/menu_carrot.png"));
+	ImageIcon radishimg = new ImageIcon(getClass().getClassLoader().getResource("pic/menu_radish.png"));
+	ImageIcon bugerimg = new ImageIcon(getClass().getClassLoader().getResource("pic/menu_hambuger.png"));
 
 	static int Score1 = 0;
 	static int Score2 = 0;

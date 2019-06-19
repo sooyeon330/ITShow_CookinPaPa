@@ -18,7 +18,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 class Ramen_Rank extends JPanel{
-	ImageIcon bgimg = new ImageIcon("pic/rank_ramen.png");
+	ImageIcon bgimg = new ImageIcon(getClass().getClassLoader().getResource("pic/rank_ramen.png"));
 	public Ramen_Rank(List<Rank> ranks) {
 //		setLayout(null);
 		setLayout(new GridLayout(7, 1));
@@ -38,7 +38,7 @@ class Ramen_Rank extends JPanel{
 	}
 }
 class Egg_Rank extends JPanel{
-	ImageIcon bgimg = new ImageIcon("pic/rank_eggroll.png");
+	ImageIcon bgimg = new ImageIcon(getClass().getClassLoader().getResource("pic/rank_eggroll.png"));
 	public Egg_Rank(List<Rank> ranks) {
 //		setLayout(null);
 		setLayout(new GridLayout(7, 1));
@@ -58,7 +58,7 @@ class Egg_Rank extends JPanel{
 	}
 }
 class Chicken_Rank extends JPanel{
-	ImageIcon bgimg = new ImageIcon("pic/rank_chicken.png");
+	ImageIcon bgimg = new ImageIcon(getClass().getClassLoader().getResource("pic/rank_chicken.png"));
 	public Chicken_Rank(List<Rank> ranks) {
 //		setLayout(null);
 		setLayout(new GridLayout(7, 1));
@@ -78,7 +78,7 @@ class Chicken_Rank extends JPanel{
 	}
 }
 class Kimbab_Rank extends JPanel{
-	ImageIcon bgimg = new ImageIcon("pic/rank_kimbab.png");
+	ImageIcon bgimg = new ImageIcon(getClass().getClassLoader().getResource("pic/rank_kimbab.png"));
 	public Kimbab_Rank(List<Rank> ranks) {
 //		setLayout(null);
 		setLayout(new GridLayout(7, 1));
@@ -103,11 +103,11 @@ class Kimbab_Rank extends JPanel{
     public Chicken_Rank ck_rank = null;
     public Kimbab_Rank kb_rank = null;
     
-    static ImageIcon btn_ramen_img = new ImageIcon("pic/rank_ramen_btn.png");
-    ImageIcon btn_egg_img = new ImageIcon("pic/rank_egg_btn.png");
-    ImageIcon btn_chicken_img = new ImageIcon("pic/rank_chicken_btn.png");
-    ImageIcon btn_kimbab_img = new ImageIcon("pic/rank_kimbab_btn.png");    
-    ImageIcon btn_reset_img = bugerFrame.ImageResize(100, 50, new ImageIcon("pic/rank_reset_btn.png"));
+    static ImageIcon btn_ramen_img = new ImageIcon(view_Rank.class.getClassLoader().getResource("pic/rank_ramen_btn.png"));
+    ImageIcon btn_egg_img = new ImageIcon(getClass().getClassLoader().getResource("pic/rank_egg_btn.png"));
+    ImageIcon btn_chicken_img = new ImageIcon(getClass().getClassLoader().getResource("pic/rank_chicken_btn.png"));
+    ImageIcon btn_kimbab_img = new ImageIcon(getClass().getClassLoader().getResource("pic/rank_kimbab_btn.png"));    
+    ImageIcon btn_reset_img = bugerFrame.ImageResize(100, 50, new ImageIcon(getClass().getClassLoader().getResource("pic/rank_reset_btn.png")));
     JButton btn1,btn2,btn3,btn4;
     
     public static final int btnimg_width = btn_ramen_img.getIconWidth();

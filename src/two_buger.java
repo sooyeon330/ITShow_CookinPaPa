@@ -11,16 +11,16 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class two_buger extends JPanel{	
-	ImageIcon bgimage = new ImageIcon("pic/cuttingboard3.png");
-	ImageIcon keyimg[] = { new ImageIcon("pic/key1.png"), // left
-							new ImageIcon("pic/key2.png"), // up
-							new ImageIcon("pic/key3.png"), //right
-							new ImageIcon("pic/key4.png")}; //down
+	ImageIcon bgimage = new ImageIcon(getClass().getClassLoader().getResource("pic/cuttingboard3.png"));
+	ImageIcon keyimg[] = { new ImageIcon(getClass().getClassLoader().getResource("pic/key1.png")), // left
+							new ImageIcon(getClass().getClassLoader().getResource("pic/key2.png")), // up
+							new ImageIcon(getClass().getClassLoader().getResource("pic/key3.png")), //right
+							new ImageIcon(getClass().getClassLoader().getResource("pic/key4.png"))}; //down
 	
-	ImageIcon presskeyimg[] = { new ImageIcon("pic/presskey1.png"), // left
-							new ImageIcon("pic/presskey2.png"), // up
-							new ImageIcon("pic/presskey3.png"), //right
-							new ImageIcon("pic/presskey4.png")}; //down
+	ImageIcon presskeyimg[] = { new ImageIcon(getClass().getClassLoader().getResource("pic/presskey1.png")), // left
+							new ImageIcon(getClass().getClassLoader().getResource("pic/presskey2.png")), // up
+							new ImageIcon(getClass().getClassLoader().getResource("pic/presskey3.png")), //right
+							new ImageIcon(getClass().getClassLoader().getResource("pic/presskey4.png"))}; //down
 	
 	public static final int x1 = 35;
 	public static final int x2 = 550;//방향키 기본 x좌표

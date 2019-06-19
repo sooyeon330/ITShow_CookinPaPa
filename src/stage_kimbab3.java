@@ -16,13 +16,17 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class stage_kimbab3 extends JPanel{
-	ImageIcon bgimage= new ImageIcon("pic/table.png");
-	ImageIcon bowlImag[] = {new ImageIcon("pic/kimbab_bowl1.png"),new ImageIcon("pic/kimbab_bowl2.png"),
-			new ImageIcon("pic/kimbab_bowl3.png"),new ImageIcon("pic/kimbab_bowl4.png"),new ImageIcon("pic/kimbab_bowl4-2.png"),
-			new ImageIcon("pic/kimbab_bowl4-3.png"),new ImageIcon("pic/kimbab_bowl5.png")};
-	ImageIcon salt = new ImageIcon("pic/salt.png");
-	ImageIcon sesameOil = new ImageIcon("pic/sesameOil.png");
-	ImageIcon sesame = new ImageIcon("pic/sesame.png");
+	ImageIcon bgimage= new ImageIcon(getClass().getClassLoader().getResource("pic/table.png"));
+	ImageIcon bowlImag[] = {new ImageIcon(getClass().getClassLoader().getResource("pic/kimbab_bowl1.png")),
+			new ImageIcon(getClass().getClassLoader().getResource("pic/kimbab_bowl2.png")),
+			new ImageIcon(getClass().getClassLoader().getResource("pic/kimbab_bowl3.png")),
+			new ImageIcon(getClass().getClassLoader().getResource("pic/kimbab_bowl4.png")),
+			new ImageIcon(getClass().getClassLoader().getResource("pic/kimbab_bowl4-2.png")),
+			new ImageIcon(getClass().getClassLoader().getResource("pic/kimbab_bowl4-3.png")),
+			new ImageIcon(getClass().getClassLoader().getResource("pic/kimbab_bowl5.png"))};
+	ImageIcon salt = new ImageIcon(getClass().getClassLoader().getResource("pic/salt.png"));
+	ImageIcon sesameOil = new ImageIcon(getClass().getClassLoader().getResource("pic/sesameOil.png"));
+	ImageIcon sesame = new ImageIcon(getClass().getClassLoader().getResource("pic/sesame.png"));
 	JPanel panel;
 	
 	int count = 0;
@@ -64,7 +68,7 @@ public class stage_kimbab3 extends JPanel{
 			public void mousePressed(MouseEvent e) {
 				if(pause.work) {
 				setCursor(Toolkit.getDefaultToolkit().createCustomCursor(
-						new ImageIcon("pic/sesameOil.png").getImage(), new Point(31,31),"custom cursor"));
+						new ImageIcon(getClass().getClassLoader().getResource("pic/sesameOil.png")).getImage(), new Point(31,31),"custom cursor"));
 				}
 			}
 			@Override
@@ -85,7 +89,7 @@ public class stage_kimbab3 extends JPanel{
 			public void mousePressed(MouseEvent e) {
 				if(pause.work) {
 				setCursor(Toolkit.getDefaultToolkit().createCustomCursor(
-						new ImageIcon("pic/sesame.png").getImage(), new Point(31,31),"custom cursor"));
+						new ImageIcon(getClass().getClassLoader().getResource("pic/sesame.png")).getImage(), new Point(31,31),"custom cursor"));
 				}
 			}
 			@Override
@@ -106,7 +110,7 @@ public class stage_kimbab3 extends JPanel{
 			public void mousePressed(MouseEvent e) {
 				if(pause.work) {
 				setCursor(Toolkit.getDefaultToolkit().createCustomCursor(
-						new ImageIcon("pic/salt.png").getImage(), new Point(31,31),"custom cursor"));
+						new ImageIcon(getClass().getClassLoader().getResource("pic/salt.png")).getImage(), new Point(31,31),"custom cursor"));
 				}
 			}
 			@Override
