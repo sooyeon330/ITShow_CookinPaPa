@@ -133,7 +133,7 @@ public class title {
 			@Override
 			public void run() {
 				Toolkit toolkit = Toolkit.getDefaultToolkit();
-				Image img = toolkit.getImage("pic/egg_icon.png");
+				Image img = toolkit.getImage(getClass().getClassLoader().getResource("pic/egg_icon.png"));
 				frame.setIconImage(img);
 				frame.setTitle("Cooking PaPa 쿠킹파파"); 
 				frame.setLocation(0,0);
