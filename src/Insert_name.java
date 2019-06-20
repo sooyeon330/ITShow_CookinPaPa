@@ -27,7 +27,8 @@ import javax.swing.SwingUtilities;
 		setPreferredSize(new Dimension(300, 200));
 		setLocation(500, 500);
 		try {
-			conn = DriverManager.getConnection("jdbc:sqlite:CookingPapa.db");
+			String path = "C:\\Users\\Mirim\\Desktop\\COOKING\\ITShow_CookinPaPa\\CookingPapa.db";
+			conn = DriverManager.getConnection("jdbc:sqlite:"+path);
 			RankDAO.init(conn);
 	
 			nikname = JOptionPane.showInputDialog("닉네임을 입력해주세요");

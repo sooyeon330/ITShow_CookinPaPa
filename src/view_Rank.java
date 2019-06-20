@@ -117,7 +117,8 @@ class Kimbab_Rank extends JPanel{
 		setLayout(null);
 		Connection conn;
 		try {
-			conn = DriverManager.getConnection("jdbc:sqlite:CookingPapa.db");
+			String path = "C:\\Users\\Mirim\\Desktop\\COOKING\\ITShow_CookinPaPa\\CookingPapa.db";
+			conn = DriverManager.getConnection("jdbc:sqlite:"+path);
 		
 			RankDAO.init(conn);
 	       
