@@ -58,14 +58,16 @@ public class stage_kimbab5 extends JPanel{
 				if(e.getKeyCode() == KeyEvent.VK_SPACE) {
 					if(Timing.x >=460 && Timing.x <=500) {
 						success_count++;
-						menu.stage4_score += 5;
 						kimbab.setIcon(kimbabImg[success_count]);
 					}
 					count++;
 					if(count >= 4 && success_count < 2 || count > 4 && success_count == 2) {
 						kimbab.setIcon(kimbabImg[3]);
 					}
-					if(count >= 5 || success_count == 3) {
+					
+					if(success_count >= 3) menu.stage4_score += 10;
+					
+					if(count >= 5 || success_count >= 3) {
 						success_count = 0;
 						count = 0;
 						Timing.stopFlag = true;

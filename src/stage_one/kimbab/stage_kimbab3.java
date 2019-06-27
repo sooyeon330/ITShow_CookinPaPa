@@ -158,12 +158,10 @@ public class stage_kimbab3 extends JPanel{
 			public void mouseReleased(MouseEvent e) {
 				endX = e.getX();
 				endY = e.getY();
-				if(pause.work) {
-					if(endX + startX >= 400 && endY + startY >= 500) {
-						count2++;
-						menu.stage4_score += 3;
-					}
-
+				if(clear && pause.work) {
+					count2++;
+					menu.stage4_score += 3;
+					
 					if (count2 == 3) bowl.setIcon(bowlImag[4]);
 					if (count2 == 4) bowl.setIcon(bowlImag[5]);
 					if (count2 == 5) bowl.setIcon(bowlImag[6]);

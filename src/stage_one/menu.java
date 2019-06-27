@@ -41,15 +41,15 @@ public class menu extends JPanel{
 		
 		add(new back(frame, this, 1));
 		
-		JButton btn1 = new JButton(ramenimg);
+		JButton btn1 = new JButton(kimbabimg);
 		JButton btn2 = new JButton(eggrollimg);
 		JButton btn3 = new JButton(chikenimg);
-		JButton btn4 = new JButton(kimbabimg);
+		JButton btn4 = new JButton(ramenimg);
 		
-		btn1.setBounds(80,250,ramenimg.getIconWidth(),ramenimg.getIconHeight());
+		btn1.setBounds(140,270,kimbabimg.getIconWidth(),kimbabimg.getIconHeight());
 		btn2.setBounds(420,270,eggrollimg.getIconWidth(),eggrollimg.getIconHeight());
 		btn3.setBounds(700,250,chikenimg.getIconWidth(),chikenimg.getIconHeight());
-		btn4.setBounds(130,480,kimbabimg.getIconWidth(),kimbabimg.getIconHeight());
+		btn4.setBounds(80,460,ramenimg.getIconWidth(),ramenimg.getIconHeight());
 		btn_setting(btn1);btn_setting(btn2);btn_setting(btn3);btn_setting(btn4);
 		
 		add(btn1);
@@ -57,11 +57,18 @@ public class menu extends JPanel{
 		add(btn3);
 		add(btn4);
 		
+		JButton button3 = new JButton(tutorial);
+		button3.setBounds(0,10,250,80);		
+		add(button3);
+		
 		btn1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
-				setVisible(false);
-				frame.add(new stage_ramen(frame));
+				exam_kimbab.btn_count = 1;
+				frame.add(new exam_kimbab(frame));
+				frame.remove(panel);
+				frame.repaint();
+				frame.revalidate();
 			}
 			@Override
 			public void mouseEntered(MouseEvent arg0) {
@@ -73,8 +80,10 @@ public class menu extends JPanel{
 		btn2.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
-				setVisible(false);
 				frame.add(new stage_eggroll(frame));
+				frame.remove(panel);
+				frame.repaint();
+				frame.revalidate();
 			}
 			@Override
 			public void mouseEntered(MouseEvent arg0) {
@@ -98,8 +107,7 @@ public class menu extends JPanel{
 		btn4.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
-				exam_kimbab.btn_count = 1;
-				frame.add(new exam_kimbab(frame));
+				frame.add(new stage_ramen(frame));
 				frame.remove(panel);
 				frame.repaint();
 				frame.revalidate();
@@ -110,9 +118,6 @@ public class menu extends JPanel{
 			}
 		});
 			
-		
-		JButton button3 = new JButton(tutorial);
-
 		btn_setting(button3);
 		button3.addMouseListener(new MouseAdapter() {
 			@Override
@@ -135,8 +140,6 @@ public class menu extends JPanel{
 			}
 		
 		});
-		button3.setBounds(700,600,300,80);		
-		add(button3);
 	}
 	
 	public static void btn_setting(JButton btn) {

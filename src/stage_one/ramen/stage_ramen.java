@@ -72,13 +72,22 @@ public class stage_ramen extends JPanel{
 		JLabel scoretxt = new JLabel();
 		
 		JButton gobtn = new JButton(go_btnimg);
+		gobtn.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+
+				Timer timer = new Timer(15, panel, frame,6);
+				timer.start();
+			}
+		});
 		Explane_Event btnevent = new Explane_Event();
 		
 		btnevent.gobtn_event(lb_explane, gobtn);
 		btnevent.image_crop(gobtn);
 		add(gobtn);add(lb_explane);
 		
-		Timer timer = new Timer(15, panel, frame,6);
 //		Rm_Time_Limit timer = new Rm_Time_Limit(11, this, frame);
 //		new pause(panel,timer);
 		
@@ -95,129 +104,121 @@ public class stage_ramen extends JPanel{
 		add(pot); add(water); add(soupbase); add(noodle); add(greenOnion); add(egg); add(startbtn); 
 		
 		flag=1;  i=0;j=0;
-		startbtn.addMouseListener(new MouseAdapter() {
-			
+	
+		
+		water.addMouseListener(new MouseAdapter() {
 			@Override
-			public void mouseClicked(MouseEvent e) {
-				if(flag==start) { 
-					startbtn.setIcon(btnedimg); flag = end;
-					timer.start();
-					
-					water.addMouseListener(new MouseAdapter() {
-						@Override
-						public void mouseEntered(MouseEvent e) {
-							setCursor(new Cursor(Cursor.HAND_CURSOR));
-						}
-						@Override
-						public void mousePressed(MouseEvent e) {
-							setCursor(Toolkit.getDefaultToolkit().createCustomCursor(
-									new ImageIcon(getClass().getClassLoader().getResource("pic/watercup.png")).getImage(), new Point(31,31),"custom cursor"));
-						}
-						@Override
-						public void mouseReleased(MouseEvent e) {
-							if(e.getX()>=pot_x && e.getX()<=pot_x+potimg.getIconWidth() && e.getY()<= pot_y ) {
-								useorder[j++]=w;
-								setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
-								water.setVisible(false);
-							}else
-								setCursor(new Cursor(Cursor.DEFAULT_CURSOR)); 
-						}
-					});
-					
-					soupbase.addMouseListener(new MouseAdapter() {
-						@Override
-						public void mouseEntered(MouseEvent e) {
-							setCursor(new Cursor(Cursor.HAND_CURSOR));
-						}
-						@Override
-						public void mousePressed(MouseEvent e) {
-							setCursor(Toolkit.getDefaultToolkit().createCustomCursor(
-									new ImageIcon(getClass().getClassLoader().getResource("pic/soup.png")).getImage(), new Point(31,31),"custom cursor"));
-						}
-						@Override
-						public void mouseReleased(MouseEvent e) {
-							if(e.getX() >= pot_x && e.getX() <= pot_x + potimg.getIconWidth()) {
-								useorder[j++]=s;
-								setCursor(new Cursor(Cursor.DEFAULT_CURSOR)); 
-								soupbase.setVisible(false);
-							}else
-								setCursor(new Cursor(Cursor.DEFAULT_CURSOR)); 
-						}
-					});
-					noodle.addMouseListener(new MouseAdapter() {
-						@Override
-						public void mouseEntered(MouseEvent e) {
-							setCursor(new Cursor(Cursor.HAND_CURSOR));
-						}
-						@Override
-						public void mousePressed(MouseEvent e) {
-							setCursor(Toolkit.getDefaultToolkit().createCustomCursor(
-									new ImageIcon(getClass().getClassLoader().getResource("pic/noodle.png")).getImage(), new Point(31,31),"custom cursor"));
-						}
-						@Override
-						public void mouseReleased(MouseEvent e) {
-							if(e.getX() >= pot_x && e.getX() <= pot_x + potimg.getIconWidth()) {
-								useorder[j++]=n;
-								setCursor(new Cursor(Cursor.DEFAULT_CURSOR)); 
-								noodle.setVisible(false);
-							}else
-								setCursor(new Cursor(Cursor.DEFAULT_CURSOR)); 
-						}
-					});
-					greenOnion.addMouseListener(new MouseAdapter() {
-						@Override
-						public void mouseEntered(MouseEvent e) {
-							setCursor(new Cursor(Cursor.HAND_CURSOR));
-						}
-						@Override
-						public void mousePressed(MouseEvent e) {
-							setCursor(Toolkit.getDefaultToolkit().createCustomCursor(
-									new ImageIcon(getClass().getClassLoader().getResource("pic/green_onion.png")).getImage(), new Point(31,31),"custom cursor"));
-						}
-						@Override
-						public void mouseReleased(MouseEvent e) {
-							if(e.getX() >= -548 && e.getX() <= -62) {
-								useorder[j++]=g;
-								setCursor(new Cursor(Cursor.DEFAULT_CURSOR)); 
-								greenOnion.setVisible(false);
-							}else
-								System.out.println(e.getX());
-								setCursor(new Cursor(Cursor.DEFAULT_CURSOR)); 
-						}
-					});
-					egg.addMouseListener(new MouseAdapter() {
-						@Override
-						public void mouseEntered(MouseEvent e) {
-							setCursor(new Cursor(Cursor.HAND_CURSOR));
-						}
-						@Override
-						public void mousePressed(MouseEvent e) {
-							setCursor(Toolkit.getDefaultToolkit().createCustomCursor(
-									new ImageIcon(getClass().getClassLoader().getResource("pic/Egg.png")).getImage(), new Point(31,31),"custom cursor"));
-						}
-						@Override
-						public void mouseReleased(MouseEvent e) {
-							if(e.getX() >= -548 && e.getX() <= -62) {
-								useorder[j++]=stage_ramen.e;
-								setCursor(new Cursor(Cursor.DEFAULT_CURSOR)); 
-								egg.setVisible(false);
-							}else
-								setCursor(new Cursor(Cursor.DEFAULT_CURSOR)); 
-						}
-					});
-					
-				}
-				else if(flag==end) { 
-					startbtn.setIcon(btnimg);
-					check();
-					printcnt=1;
-					removeAll();
-					repaint();
-					
-				}
+			public void mouseEntered(MouseEvent e) {
+				setCursor(new Cursor(Cursor.HAND_CURSOR));
+			}
+			@Override
+			public void mousePressed(MouseEvent e) {
+				setCursor(Toolkit.getDefaultToolkit().createCustomCursor(
+						new ImageIcon(getClass().getClassLoader().getResource("pic/watercup.png")).getImage(), new Point(31,31),"custom cursor"));
+			}
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				if(e.getX() >= pot_x && e.getX() <= pot_x + potimg.getIconWidth() ) {
+					useorder[j++]=w; endgame();
+					setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+					water.setVisible(false);
+				}else
+					setCursor(new Cursor(Cursor.DEFAULT_CURSOR)); 
 			}
 		});
+		
+		soupbase.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				setCursor(new Cursor(Cursor.HAND_CURSOR));
+			}
+			@Override
+			public void mousePressed(MouseEvent e) {
+				setCursor(Toolkit.getDefaultToolkit().createCustomCursor(
+						new ImageIcon(getClass().getClassLoader().getResource("pic/soup.png")).getImage(), new Point(31,31),"custom cursor"));
+			}
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				if(e.getX() >= pot_x && e.getX() <= pot_x + potimg.getIconWidth()) {
+					useorder[j++]=s;endgame();
+					setCursor(new Cursor(Cursor.DEFAULT_CURSOR)); 
+					soupbase.setVisible(false);
+				}else
+					setCursor(new Cursor(Cursor.DEFAULT_CURSOR)); 
+			}
+		});
+		noodle.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				setCursor(new Cursor(Cursor.HAND_CURSOR));
+			}
+			@Override
+			public void mousePressed(MouseEvent e) {
+				setCursor(Toolkit.getDefaultToolkit().createCustomCursor(
+						new ImageIcon(getClass().getClassLoader().getResource("pic/noodle.png")).getImage(), new Point(31,31),"custom cursor"));
+			}
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				if(e.getX() >= pot_x && e.getX() <= pot_x + potimg.getIconWidth()) {
+					useorder[j++]=n;endgame();
+					setCursor(new Cursor(Cursor.DEFAULT_CURSOR)); 
+					noodle.setVisible(false);
+				}else
+					setCursor(new Cursor(Cursor.DEFAULT_CURSOR)); 
+			}
+		});
+		greenOnion.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				setCursor(new Cursor(Cursor.HAND_CURSOR));
+			}
+			@Override
+			public void mousePressed(MouseEvent e) {
+				setCursor(Toolkit.getDefaultToolkit().createCustomCursor(
+						new ImageIcon(getClass().getClassLoader().getResource("pic/green_onion.png")).getImage(), new Point(31,31),"custom cursor"));
+			}
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				if(e.getX() >= -548 && e.getX() <= -62) {
+					useorder[j++]=g;endgame();
+					setCursor(new Cursor(Cursor.DEFAULT_CURSOR)); 
+					greenOnion.setVisible(false);
+				}else
+					System.out.println(e.getX());
+					setCursor(new Cursor(Cursor.DEFAULT_CURSOR)); 
+			}
+		});
+		egg.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				setCursor(new Cursor(Cursor.HAND_CURSOR));
+			}
+			@Override
+			public void mousePressed(MouseEvent e) {
+				setCursor(Toolkit.getDefaultToolkit().createCustomCursor(
+						new ImageIcon(getClass().getClassLoader().getResource("pic/Egg.png")).getImage(), new Point(31,31),"custom cursor"));
+			}
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				if(e.getX() >= -548 && e.getX() <= -62) {
+					useorder[j++]=stage_ramen.e;endgame();
+					setCursor(new Cursor(Cursor.DEFAULT_CURSOR)); 
+					egg.setVisible(false);
+				}else
+					setCursor(new Cursor(Cursor.DEFAULT_CURSOR)); 
+			}
+		});
+					
+	}//생성자
+			
 
+	void endgame() {		
+		if(j==5) {
+			check();
+			printcnt=1;
+			removeAll();
+			repaint();
+		}
 	}
 	
 	void setbounds_img(Component c) {

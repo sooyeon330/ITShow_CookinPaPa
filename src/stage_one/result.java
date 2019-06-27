@@ -20,11 +20,18 @@ public class result extends JPanel{
 	ImageIcon btn_unclickimg = new ImageIcon(getClass().getClassLoader().getResource("pic/ranking_btn_unclick.png"));
 	ImageIcon btn_clickimg = new ImageIcon(getClass().getClassLoader().getResource("pic/ranking_btn_click.png"));
 	
+	int stage_score = 0;
+	int num = 0;
+	
 	public result(JFrame frame, int score,int stage_num){
 		setLayout(null);
-		int num = stage_num;
+		num = stage_num;
+		stage_score = score;
+		
+		if(stage_score >= 100) stage_score = 100;
+		
 		JLabel view = new JLabel();
-		view.setText(Integer.toString(score));
+		view.setText(Integer.toString(stage_score));
 		view.setFont(new Font("Bingrea",Font.BOLD,15).deriveFont(120.0f));
 		view.setBounds(480, 300, 300, 200);
 		add(view);
@@ -38,7 +45,7 @@ public class result extends JPanel{
 		rankbtn.addActionListener(new ActionListener() {				
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				add(new insert_name(num,score));
+				add(new insert_name(num,stage_score));
 			}
 		});
 		

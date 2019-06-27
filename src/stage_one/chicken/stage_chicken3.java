@@ -183,8 +183,8 @@ class stage_chicken3 extends JPanel{
 				endX = e.getX();
 				endY = e.getY();
 				//System.out.println(e.getY());
-				if(pause.work) {
-					if(endX + startX >= 400 && endY + startY >= 500) count2++;
+				if(clear && pause.work) {
+					count2++;
 						
 					if(count2 == 4) {
 						ingre_sauce.setIcon(sauce[5]);
